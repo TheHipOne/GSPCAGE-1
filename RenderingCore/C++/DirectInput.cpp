@@ -13,18 +13,18 @@ DirectInput::DirectInput(DWORD keyboardCoopFlags, DWORD mouseCoopFlags)
 	ZeroMemory(mKeyboardState, sizeof(mKeyboardState));
 	ZeroMemory(&mMouseState, sizeof(mMouseState));
 
-	HR(DirectInput8Create(g_d3dApp->getAppInst(), DIRECTINPUT_VERSION, 
-		IID_IDirectInput8, (void**)&mDInput, 0));
+	//HR(DirectInput8Create(g_d3dApp->getAppInst(), DIRECTINPUT_VERSION, 
+	//	IID_IDirectInput8, (void**)&mDInput, 0));
 
 	HR(mDInput->CreateDevice(GUID_SysKeyboard, &mKeyboard, 0));
 	HR(mKeyboard->SetDataFormat(&c_dfDIKeyboard));
 	HR(mKeyboard->SetCooperativeLevel(g_d3dApp->getMainWnd(), keyboardCoopFlags));
-//	HR(mKeyboard->Acquire());
+	//HR(mKeyboard->Acquire());
 
 	HR(mDInput->CreateDevice(GUID_SysMouse, &mMouse, 0));
 	HR(mMouse->SetDataFormat(&c_dfDIMouse2));
 	HR(mMouse->SetCooperativeLevel(g_d3dApp->getMainWnd(), mouseCoopFlags));
-//	HR(mMouse->Acquire());
+	//HR(mMouse->Acquire());
 }
 
 DirectInput::~DirectInput()

@@ -75,6 +75,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\..\RenderingCore\FX\lighting.fx" />
+    <None Include="..\..\RenderingCore\FX\pointlight.fx" />
+    <None Include="..\..\RenderingCore\FX\vblend2.fx" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

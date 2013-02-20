@@ -60,7 +60,7 @@ EngineMain::EngineMain(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE d
 
 	dwarf =  new Model("dwarf.x");
 	skull =	 new Model("skullocc.x");
-	tiny  =  new AnimatedModel ("tiny_4anim.x", "Tiny_skin.bmp");
+	tiny  =  new Model("tiny.x");
 
 	m_GfxStats->addVertices(skull->m_Model->GetNumVertices());
 	m_GfxStats->addTriangles(skull->m_Model->GetNumFaces());
@@ -128,7 +128,7 @@ void EngineMain::updateScene(float dt)
 	m_GfxStats->update(dt);
 
 	// Get snapshot of input devices.
-	gDInput->poll();
+	/*gDInput->poll();
 
 	// Check input.
 	if( gDInput->keyDown(DIK_W) )
@@ -141,12 +141,11 @@ void EngineMain::updateScene(float dt)
 	{
 		dwarf->Move(5.0f * dt, 0);
 		//camera.Move(D3DXVECTOR3(5.0f, 0.0f, 0.0f) * dt);
-		tiny->setAnimTrack(2);
 	}
 	if( gDInput->keyDown(DIK_L) )
 		dwarf->Rotate(5.0f * dt);
 	if( gDInput->keyDown(DIK_K) )
-		dwarf->Rotate(-5.0f * dt);
+		dwarf->Rotate(-5.0f * dt);*/
 
 	// The camera position/orientation relative to world space can 
 	// change every frame based on input, so we need to rebuild the
@@ -154,8 +153,6 @@ void EngineMain::updateScene(float dt)
 	buildViewMtx();
 	skull->Rotate(sin(dt));
 	tiny->Rotate(sin(dt));
-	tiny->update(dt);
-
 }
 
 
@@ -177,6 +174,7 @@ void EngineMain::drawScene()
 	Shaders::BasicFX->m_FX->BeginPass(0);
 	skull->DrawModel(wVPM);
 	dwarf->DrawModel(wVPM);
+	tiny->DrawModel(wVPM);
 
 	Shaders::BasicFX->m_FX->EndPass();
 	Shaders::BasicFX->m_FX->End();
@@ -191,7 +189,7 @@ void EngineMain::drawScene()
 	Shaders::VBlendFX->m_FX->BeginPass(0);
 
 
-	tiny->draw(wVPM);
+	//tiny->draw(wVPM);
 
 	Shaders::VBlendFX->m_FX->EndPass();
 	Shaders::VBlendFX->m_FX->End();

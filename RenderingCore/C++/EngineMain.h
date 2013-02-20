@@ -47,7 +47,7 @@ private:
 	// // // Models // // //
 	Model*			skull;
 	Model*			dwarf;
-	AnimatedModel*	tiny;
+	Model*	tiny;
 	// // // // // // // // 
 
 	DirectionalLight m_DirLight;

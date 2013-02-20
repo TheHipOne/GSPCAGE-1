@@ -25,9 +25,21 @@
     <Filter Include="Source Files\Rendering">
       <UniqueIdentifier>{fdd82f12-6b05-4dda-a7f7-9e70756620a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Rendering\FX">
+      <UniqueIdentifier>{e40f6b09-bb5f-47de-a4b8-1b65843d6c2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="..\..\RenderingCore\FX\lighting.fx">
+      <Filter>Source Files\Rendering\FX</Filter>
+    </None>
+    <None Include="..\..\RenderingCore\FX\pointlight.fx">
+      <Filter>Source Files\Rendering\FX</Filter>
+    </None>
+    <None Include="..\..\RenderingCore\FX\vblend2.fx">
+      <Filter>Source Files\Rendering\FX</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\RenderingCore\C++\AllocMeshHierarchy.h">

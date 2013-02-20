@@ -88,7 +88,7 @@ void LoadXFile(
 	std::vector<IDirect3DTexture9*>& texs)
 {
 	// Step 1: Load the .x file from file into a system memory mesh.
-
+	std::string fileStart = "..\\..\\RenderingCore\\Models\\";
 	ID3DXMesh* meshSys      = 0;
 	ID3DXBuffer* adjBuffer  = 0;
 	ID3DXBuffer* mtrlBuffer = 0;
@@ -153,7 +153,6 @@ void LoadXFile(
 	if( mtrlBuffer != 0 && numMtrls != 0 )
 	{
 		D3DXMATERIAL* d3dxmtrls = (D3DXMATERIAL*)mtrlBuffer->GetBufferPointer();
-
 		for(DWORD i = 0; i < numMtrls; ++i)
 		{
 			// Save the ith material.  Note that the MatD3D property does not have an ambient
@@ -165,6 +164,7 @@ void LoadXFile(
 			m.specPower = d3dxmtrls[i].MatD3D.Power;
 			mtrls.push_back( m );
 
+			d3dxmtrls[i].pTextureFilename = d3dxmtrls[i].pTextureFilename;
 			// Check if the ith material has an associative texture
 			if( d3dxmtrls[i].pTextureFilename != 0 )
 			{
