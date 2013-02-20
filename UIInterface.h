@@ -1,7 +1,6 @@
 //////////////////////////////////////////////////
 //
-// Inventory.h: A class for an inventory window which also
-// handles items inside said inventory.
+// UIInterface.h: A class interface for the UI
 //
 //////////////////////////////////////////////////
 
