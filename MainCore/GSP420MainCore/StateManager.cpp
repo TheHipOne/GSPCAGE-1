@@ -10,20 +10,20 @@ need from them.
 #include "StateManager.h" // Our StateManager class
 #include <iostream> // Now we can work with I/O
 #include "MainInterface.h"
-#include "..\AudioCore\ResourceManager.h" //Resource core wants these to initialize
-#include "..\AudioCore\cTextureResource.h"
+//#include "..\AudioCore\ResourceManager.h" // Resource core wants these to initialize TODO: Uncomment these when we start integrating the audio/resource core
+//#include "..\AudioCore\cTextureResource.h"
 
 
 using namespace std; // Standard namespace in standard library
 
-StateManager::StateManager(void) // Constructor
+StateManager::StateManager(void) // Constructor initializing to STARTUP state
 {
-	currentState = STARTUP; // Default our current state to startup
+	currentState = STARTUP; // Default our current state to STARTUP
 
 	cout << "StateManager Created\n"; // Write success to console	
 }
 
-void StateManager::Run() // Tell the StateManager to start processing the state of the game
+void StateManager::Run() // Start the game loop
 {
 	bool running = true; // The game is running
 
@@ -81,22 +81,19 @@ void StateManager::StartUp(DWORD elapsedTime)
 	currentState = TITLE;
 }
 
-//Initializes the resource core. Will probably want similar for other cores when we really start integrating.
-void StateManager::InitResourceCore()
+void StateManager::InitResourceCore() // Initializes the resource core. Will probably want similar for other cores when we really start integrating.
 {
-	cResourceManager* resourceManager = new cResourceManager();//Instantiate the Resource Manager
+	//cResourceManager* resourceManager = new cResourceManager(); // Instantiate the Resource Manager //TODO: Uncomment these when we start integrating the audio/resource core
 
-	cAudioResource* soundResource; // variable for a sound resource
-	cTextureResource* textureResource; // variable for a texture resource
+	//cAudioResource* soundResource; // variable for a sound resource
+	//cTextureResource* textureResource; // variable for a texture resource
 
-	AudioManager::GetInstance()->Initialize(); // Initialize the Audio Manager
+	//AudioManager::GetInstance()->Initialize(); // Initialize the Audio Manager
 }
 
 void StateManager::Title(DWORD elapsedTime)
 {
 	cout << "Title screen displaying.\n";
-
-	MainInterface::OutputToConsole("Testing output to console method"); //UNDO THIS LATER, JUST TESTING
 
 	//STUB: We need to actually draw the title screen and use the proper I/O
 
