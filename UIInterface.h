@@ -14,6 +14,9 @@
 #include "MainInterface.h"
 #include "Inventory.h"
 #include "SpriteStrip.h"
+#include "TextBox.h"
+#include "StatusIcon.h"
+#include "StatusBar.h"
 
 #include <string>
 
@@ -106,27 +109,44 @@ public:
   void Inventory_Draw();
 
 
-  //======================================================
+//======================================================
   // HUD functions
   //======================================================
 
   /*-----------------------------------------------------------------
-  Pourpose: Draws the status bar on the screen 
-  -------------------------------------------------------------------*/
+Purpose: creates a statusbar
+-------------------------------------------------------------------*/
+  StatusBar CreateStatusBar(std::wstring, int, int, int, float, float, SpriteStrip );
+
+    /*-----------------------------------------------------------------
+Purpose: creates a statusicon
+-------------------------------------------------------------------*/
+  StatusIcon CreateStatusIcon(std::wstring, int, int, int, SpriteStrip );
+
+    /*-----------------------------------------------------------------
+Purpose: creates a textbox
+-------------------------------------------------------------------*/
+  TextBox CreateTextBox(std::wstring, int, int, DWORD, std::wstring );
+
+
+  /*-----------------------------------------------------------------
+Purpose: Draws the status bar on the screen
+-------------------------------------------------------------------*/
   void drawStatusBar(std::wstring, int, int, int, float, float, SpriteStrip );
 
   /*-----------------------------------------------------------------
-  Pourpose: Draws the status icon or can be used as 2D animation if needed 
-  -------------------------------------------------------------------*/
+Purpose: Draws the status icon or can be used as 2D animation if needed
+-------------------------------------------------------------------*/
 
-    void drawStatusIcon(std::wstring, int, int, int, SpriteStrip);
+    void drawStatusIcon(StatusIcon, int, SpriteStrip, bool);
 
   /*-----------------------------------------------------------------
-  Pourpose: Draws a text box 
-  -------------------------------------------------------------------*/
+Purpose: Draws a text box
+-------------------------------------------------------------------*/
 
 
     void drawTextBox(std::wstring, int, int, DWORD, std::wstring);
+
 
 
 
