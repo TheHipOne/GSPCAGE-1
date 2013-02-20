@@ -11,17 +11,17 @@
 #ifndef	ENGINEMAIN_H_
 #define ENGINEMAIN_H_
 
-#include "d3dApp.h"
-#include "DirectInput.h"
+#include "..\..\RenderingCore\C++\d3dApp.h"
+#include "..\..\RenderingCore\C++\DirectInput.h"
 #include <crtdbg.h>
-#include "GfxStats.h"
+#include "..\..\RenderingCore\C++\GfxStats.h"
 #include <list>
-#include "Vertex.h"
-#include "Lighting.h"
-#include "Camera.h"
-#include "Shaders.h"
-#include "Model.h"
-#include "AnimatedModel.h"
+#include "..\..\RenderingCore\C++\Vertex.h"
+#include "..\..\RenderingCore\C++\Lighting.h"
+#include "..\..\RenderingCore\C++\Camera.h"
+#include "..\..\RenderingCore\C++\Shaders.h"
+#include "..\..\RenderingCore\C++\Model.h"
+#include "..\..\RenderingCore\C++\AnimatedModel.h"
 
 class EngineMain : public D3DApp
 {
