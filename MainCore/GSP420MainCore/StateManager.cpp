@@ -10,7 +10,7 @@ need from them.
 #include "StateManager.h" // Our StateManager class
 #include <iostream> // Now we can work with I/O
 #include "MainInterface.h"
-#include "..\..\RenderingCore\C++\EngineMain.h"
+//#include "..\..\RenderingCore\C++\EngineMain.h"
 
 
 using namespace std; // Standard namespace in standard library
@@ -33,6 +33,7 @@ void StateManager::Run() // Start the game loop
 
 	DWORD startTime = GetTickCount(); // Returns the amount of milliseconds since system startup, effectively the current time
 	DWORD elapsedTime = startTime; // No time has passed since the last cycle, on the first cycle
+	__int64 prevTimeStamp = 0; //Time elapsed in the form Rendering likes
 
 	while (running) //Loop each processing cycle until time to shut down StateManager
 	{
@@ -69,6 +70,7 @@ void StateManager::Run() // Start the game loop
 				break;
 		}
 
+		prevTimeStamp = g_d3dApp->Render(prevTimeStamp); //Render one frame
 		elapsedTime = GetTickCount() - startTime; // Elapsed time in last cycle is the current time, minus the time when we started
 	}
 }
@@ -93,10 +95,10 @@ void StateManager::InitRenderingCore(HINSTANCE hInstance)
 		_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
 	#endif
 
-	EngineMain app(hInstance, "GSP420 CAGE", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
+	app = EngineMain(hInstance, "GSP420 CAGE", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
 	g_d3dApp = &app;
 
-    g_d3dApp->run();
+    g_d3dApp->run(); //This is what's triggering that loop
 }
 
 void StateManager::Title(DWORD elapsedTime)
@@ -122,16 +124,16 @@ void StateManager::MainMenu(DWORD elapsedTime)
 
 	cin.ignore(1);
 
-	currentState = INGAME;
+	currentState = INGAME;	
 }
 
 void StateManager::InGame(DWORD elapsedTime)
 {
-	cout << "Game is running.\n";
+	cout << "Game playing.\n";
 
-	//STUB: We need to actually draw the game, run physics, AI and use the proper I/O. Likely biggest part of code will be happening from here.
+	//STUB: We need to actually draw the title screen and use the proper I/O
 
-	cout << "Press enter to simulate opening pause menu.";
+	cout << "Press enter to simulate pausing.";
 
 	cin.ignore(1);
 

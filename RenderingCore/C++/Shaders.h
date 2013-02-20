@@ -12,8 +12,8 @@
 #ifndef Shaders_H
 #define Shaders_H
 
-#include "d3dUtil.h"
-#include "Lighting.h"
+#include "..\..\RenderingCore\C++\d3dUtil.h"
+#include "..\..\RenderingCore\C++\Lighting.h"
 
 #pragma once
 

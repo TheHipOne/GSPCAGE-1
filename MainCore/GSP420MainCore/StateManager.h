@@ -1,12 +1,14 @@
 #pragma once // Prevents the header file from being included more than once
 
 #include "windows.h" // The Windows libraries
+#include "..\..\RenderingCore\C++\EngineMain.h"
 
 class StateManager
 {
 	enum gameState {STARTUP, TITLE, MAINMENU, INGAME, PAUSE, SHUTDOWN}; // Specifies which game state we're in TODO: Add more states as needed
 	gameState currentState; // The current state we're in
 	HINSTANCE hInstance; // Current HINSTANCE, whatever that means. Used for rendering core
+	EngineMain app; //Rendering core app window thing
 
 	void StartUp(DWORD elapsedTime);
 	void Title(DWORD elapsedTime);

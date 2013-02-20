@@ -26,6 +26,7 @@
 class EngineMain : public D3DApp
 {
 public:
+	EngineMain(); //Default Contructor
 	EngineMain(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, DWORD requestedVP);
 	~EngineMain();
 
