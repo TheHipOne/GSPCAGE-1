@@ -64,21 +64,49 @@ void UIInterface::Inventory_Draw()
 // HUD functions
 //======================================================
 
-void UIInterface::drawStatusBar(std::wstring, int, int, int, float, float, SpriteStrip)
-{
 
+StatusBar UIInterface::CreateStatusBar(std::wstring name, int x, int y, int id, float value, float maxvalue, SpriteStrip imagelocation)
+{
+  return StatusBar(name, x, y, id, value, maxvalue, imagelocation);
 }
 
-void UIInterface::drawStatusIcon(std::wstring, int, int, int, SpriteStrip)
+StatusIcon UIInterface::CreateStatusIcon(std::wstring name, int x, int y, int id, SpriteStrip imagelocation )
 {
-
+	return StatusIcon(name, x, y, id, imagelocation);
 }
 
-void UIInterface::drawTextBox(std::wstring, int, int, DWORD, std::wstring)
+TextBox UIInterface::CreateTextBox(std::wstring name, int x, int y, DWORD color, std::wstring message)
 {
-
+	return TextBox(name, x, y, color, message);
 }
 
+
+void UIInterface::drawStatusBar(StatusBar sb, float val, SpriteStrip imagelocation, bool valwasmodified)
+{
+	if(valwasmodified == true){
+		sb.modifyValue(val, imagelocation);
+	}
+	sb.drawElement(imageLocation);
+}
+
+void UIInterface::drawStatusIcon(StatusIcon si, int id, SpriteStrip imagelocation, bool changeimage)
+{
+	if (changeimage == true){
+		si.changeImage(id, imageLocation);
+	}
+	si.drawElement(imagelocation);
+}
+
+void UIInterface::drawTextBox(TextBox tb, std::wstring message, DWORD color, bool isnewmessage, bool isnewcolor)
+{
+	if(isnewmessage == true){
+		tb.updateText(message);
+	}
+	if(isnewcolor == true){
+		tb.modifyColor(color);
+	}
+	tb.drawElement();
+}
 
 
 //======================================================
