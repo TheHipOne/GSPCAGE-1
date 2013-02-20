@@ -7,6 +7,15 @@
 //////////////////////////////////////////////////
 
 //======================================
+#pragma once
+
+#include "targetver.h"
+
+#include <stdio.h>
+#include <tchar.h>
+
+
+
 // include guard
 #ifndef UI_STDAFX_H
 #define UI_STDAFX_H
