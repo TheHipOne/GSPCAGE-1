@@ -1,4 +1,4 @@
 GSPCAGE
 =======
 
-nom nom nom nom jen's cat's.
+User Interface for the game engine
