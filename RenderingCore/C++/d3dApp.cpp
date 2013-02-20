@@ -18,9 +18,6 @@ MainWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
-D3DApp::D3DApp()
-{
-}
 D3DApp::D3DApp(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, DWORD requestedVP)
 {
 	m_MainWndCaption = winCaption;
@@ -39,8 +36,8 @@ D3DApp::D3DApp(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, 
 
 D3DApp::~D3DApp()
 {
-	//ReleaseCOM(m_d3dObject);
-	//ReleaseCOM(g_d3dDevice);
+	ReleaseCOM(m_d3dObject);
+	ReleaseCOM(g_d3dDevice);
 }
 
 HINSTANCE D3DApp::getAppInst()
@@ -202,49 +199,6 @@ int D3DApp::run()
         }
     }
 	return (int)msg.wParam;
-}
-
-__int64 D3DApp::Render(__int64 prevTimeStamp)
-{
-	MSG  msg;
-    msg.message = WM_NULL;
-
-	__int64 cntsPerSec = 0;
-	QueryPerformanceFrequency((LARGE_INTEGER*)&cntsPerSec);
-	float secsPerCnt = 1.0f / (float)cntsPerSec;
-
-	QueryPerformanceCounter((LARGE_INTEGER*)&prevTimeStamp);
-
-	// If there are Window messages then process them.
-	if(PeekMessage( &msg, 0, 0, 0, PM_REMOVE ))
-	{
-        TranslateMessage( &msg );
-        DispatchMessage( &msg );
-	}
-	else // Otherwise if not paused, do animation/game stuff
-    {
-		__int64 currTimeStamp = 0;
-		QueryPerformanceCounter((LARGE_INTEGER*)&currTimeStamp);
-		float dt = (currTimeStamp - prevTimeStamp)*secsPerCnt;
-
-		// If the application is paused then free some CPU cycles to other 
-		// applications and then continue on to the next frame.
-		if( m_bAppPaused )
-		{
-			Sleep(20);
-		}
-		
-		if( !isDeviceLost() )
-		{
-			updateScene(dt);
-			drawScene();
-
-			// Prepare for next iteration: The current time stamp becomes
-			// the previous time stamp for the next iteration.
-		}
-
-		return currTimeStamp;
-    }    
 }
 
 LRESULT D3DApp::msgProc(UINT msg, WPARAM wParam, LPARAM lParam)

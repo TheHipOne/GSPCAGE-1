@@ -29,9 +29,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
     return g_d3dApp->run();
 }
 
-EngineMain::EngineMain()
-{
-}
 EngineMain::EngineMain(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, DWORD requestedVP)
 : D3DApp(hInstance, winCaption, devType, requestedVP)
 {
@@ -84,10 +81,10 @@ EngineMain::EngineMain(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE d
 
 EngineMain::~EngineMain()
 {
-	//delete m_GfxStats;
-	//delete(skull);
-	//delete(dwarf);
-	//delete(tiny);
+	delete m_GfxStats;
+	delete(skull);
+	delete(dwarf);
+	delete(tiny);
 	DestroyAllVertexDeclarations();
 	Shaders::DestroyAll();
 }

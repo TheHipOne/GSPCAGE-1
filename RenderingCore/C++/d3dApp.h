@@ -19,7 +19,6 @@
 class D3DApp
 {
 public:
-	D3DApp();
 	D3DApp(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, DWORD requestedVP);
 	virtual ~D3DApp();
 
@@ -39,8 +38,7 @@ public:
 	// for the sample programs of this book, we will not need to modify these.
 	virtual void initMainWindow();
 	virtual void initDirect3D();
-	virtual int run(); //Loop repeatedly
-	__int64 Render(__int64 prevTimeStamp); //Render a single frame, given time since last called.
+	virtual int run();
 	virtual LRESULT msgProc(UINT msg, WPARAM wParam, LPARAM lParam);
 
 	void enableFullScreenMode(bool enable);
