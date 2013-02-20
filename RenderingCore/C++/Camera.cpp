@@ -9,7 +9,7 @@
 
 #include "Camera.h"
 
-Camera::Camera(): m_FOV(70), m_NearValue(0.1), m_FarValue(1000), m_AspectRatio(4.0f/3.0f), m_Target()
+Camera::Camera(): m_FOV(70), m_NearValue(0.1f), m_FarValue(1000), m_AspectRatio(4.0f/3.0f), m_Target()
 {
 }
 

@@ -10,14 +10,18 @@ need from them.
 #include "StateManager.h" // Our StateManager class
 #include <iostream> // Now we can work with I/O
 #include "MainInterface.h"
-//#include "..\AudioCore\ResourceManager.h" // Resource core wants these to initialize TODO: Uncomment these when we start integrating the audio/resource core
-//#include "..\AudioCore\cTextureResource.h"
+#include "..\..\RenderingCore\C++\EngineMain.h"
 
 
 using namespace std; // Standard namespace in standard library
 
-StateManager::StateManager(void) // Constructor initializing to STARTUP state
+StateManager::StateManager(void)
 {
+}
+
+StateManager::StateManager(HINSTANCE h) // Constructor initializing to STARTUP state
+{
+	hInstance = h;
 	currentState = STARTUP; // Default our current state to STARTUP
 
 	cout << "StateManager Created\n"; // Write success to console	
@@ -74,21 +78,25 @@ void StateManager::StartUp(DWORD elapsedTime)
 	//cout << "Elapsed time since last cycle: " + (int) elapsedTime; //TODO: Fix this. I can't currently figure out how to print it out, simple boxing attempts just lead to memory access violations. It's fine in the debugger though, showing like 16 ms to iterate once through start up.
 	cout << "\nStarting up...\n";
 
-	InitResourceCore();
+	InitRenderingCore(hInstance);
 
 	cout << "Startup complete.\n";
 
 	currentState = TITLE;
 }
 
-void StateManager::InitResourceCore() // Initializes the resource core. Will probably want similar for other cores when we really start integrating.
+//Initialize the rendering core. TODO: Currently just a copy of rendering core's main test method
+void StateManager::InitRenderingCore(HINSTANCE hInstance)
 {
-	//cResourceManager* resourceManager = new cResourceManager(); // Instantiate the Resource Manager //TODO: Uncomment these when we start integrating the audio/resource core
+	// Enable run-time memory check for debug builds.
+	#if defined(DEBUG) | defined(_DEBUG)
+		_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
+	#endif
 
-	//cAudioResource* soundResource; // variable for a sound resource
-	//cTextureResource* textureResource; // variable for a texture resource
+	EngineMain app(hInstance, "GSP420 CAGE", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
+	g_d3dApp = &app;
 
-	//AudioManager::GetInstance()->Initialize(); // Initialize the Audio Manager
+    g_d3dApp->run();
 }
 
 void StateManager::Title(DWORD elapsedTime)

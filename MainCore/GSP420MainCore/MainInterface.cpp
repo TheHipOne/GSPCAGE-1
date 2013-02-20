@@ -6,8 +6,9 @@
 
 using namespace std;
 
-MainInterface::MainInterface(void)
-{	
+MainInterface::MainInterface(HINSTANCE h)
+{
+	stateManager = StateManager(h);
 }
 
 //Run the StateManager and game loop

@@ -24,18 +24,16 @@ Model::Model(const std::string& modelFileName, const std::string& textureFileNam
 	LoadXFile(modelFileName.c_str(), &m_Model, m_ModelMtrl, m_ModelTex);
 
 	HR(D3DXCreateTextureFromFile(g_d3dDevice, textureFileName.c_str(), &defaultTex));
-
 }
 
 
 Model::~Model(void)
 {
 	ReleaseCOM(m_Model);
-	for(int i = 0; i < m_ModelTex.size(); ++i)
+	for(unsigned int i = 0; i < m_ModelTex.size(); ++i)
 		ReleaseCOM(m_ModelTex[i]);
 	if (defaultTex != 0)
 		ReleaseCOM(defaultTex);
-
 }
 
 /******************************************************
