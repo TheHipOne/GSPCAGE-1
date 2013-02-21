@@ -6,24 +6,12 @@
 //
 //////////////////////////////////////////////////
 
-//======================================
-#pragma once
-
-#include "targetver.h"
-
-#include <stdio.h>
-#include <tchar.h>
-
-
-
 // include guard
 #ifndef UI_STDAFX_H
 #define UI_STDAFX_H
 
 //======================================
 // dependencies
-
-#define WIN32_LEAN_AND_MEAN // Exclude rarely-used stuff from Windows headers
 
 // Windows Header Files:
 #include <windows.h>
@@ -40,6 +28,11 @@
 #include <d3dx9tex.h>
 #include <Dxerr.h>
 #include "D3dx9core.h"
+
+#define WIN32_LEAN_AND_MEAN // Exclude rarely-used stuff from Windows headers
+
+// Project Files
+//#include "targetver.h" add when needed
 
 // Globals
 extern LPDIRECT3D9        g_pD3D;        // The DirectX object
