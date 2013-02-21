@@ -66,17 +66,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
     <ClInclude Include="HUDObject.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Keyboard_Input.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="SpriteStrip.h" />
     <ClInclude Include="StatusBar.h" />
     <ClInclude Include="StatusIcon.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TextBox.h" />
     <ClInclude Include="UIInterface.h" />
+    <ClInclude Include="xControl.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Keyboard_Input.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="SpriteStrip.cpp" />
     <ClCompile Include="StatusBar.cpp" />
     <ClCompile Include="StatusIcon.cpp" />
@@ -84,6 +91,7 @@
     <ClCompile Include="TextBox.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UIInterface.cpp" />
+    <ClCompile Include="xControl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
