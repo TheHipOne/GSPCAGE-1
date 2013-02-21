@@ -17,21 +17,21 @@
 // the code
 
 class TextBox :
-  public HUDObject
+	public HUDObject
 {
-  DWORD m_dwTextColor;
-  std::wstring m_sContent; // string to be displayed
+	DWORD m_dwTextColor;
+	std::wstring m_sContent; // string to be displayed
 
-  RECT FontPosition; 
-  LPD3DXFONT m_Font;
+	RECT FontPosition; 
+	LPD3DXFONT m_Font;
 public:
-  TextBox(std::wstring, int, int, DWORD, std::wstring);	//m_wsHOName, x, y, m_dwTextColor, m_sContent
-  ~TextBox(void);
+	TextBox(std::wstring, int, int, DWORD, std::wstring);	//m_wsHOName, x, y, m_dwTextColor, m_sContent
+	~TextBox(void);
 
-  void drawElement();				//draws the textbox using m_Font
-  void updateText(std::wstring);  //changes m_sContent to arguement
-  void modifyColor(DWORD);		//changes the color of the text
-  std::wstring getName();			//returns m_wsHOName
+	void drawElement();				//draws the textbox using m_Font
+	void updateText(std::wstring);  //changes m_sContent to arguement
+	void modifyColor(DWORD);		//changes the color of the text
+	std::wstring getName();			//returns m_wsHOName
 };
 
 #endif // !UI_TEXTBOX_H

@@ -15,59 +15,59 @@
 class xControl
 {
 private:
-    XINPUT_STATE _controllerState;
-    int _controllerNum;
+	XINPUT_STATE _controllerState;
+	int _controllerNum;
 public:
-    xControl(int playerNumber)
-  {
-  	// Set the Controller Number
-  	_controllerNum = playerNumber - 1;
-  }
+	xControl(int playerNumber)
+	{
+		// Set the Controller Number
+		_controllerNum = playerNumber - 1;
+	}
 
-  //Current state of controller
-    XINPUT_STATE GetState()
-  {
-  	// Zeroise the state
-  	ZeroMemory(&_controllerState, sizeof(XINPUT_STATE));
+	//Current state of controller
+	XINPUT_STATE GetState()
+	{
+		// Zeroise the state
+		ZeroMemory(&_controllerState, sizeof(XINPUT_STATE));
 
-  	// Get the state
-  	XInputGetState(_controllerNum, &_controllerState);
-  	return _controllerState;
-  }
+		// Get the state
+		XInputGetState(_controllerNum, &_controllerState);
+		return _controllerState;
+	}
 
-  //Check if Controller Exists
-    bool IsConnected()
-  {
-  	// Zeroise the state
-  	ZeroMemory(&_controllerState, sizeof(XINPUT_STATE));
+	//Check if Controller Exists
+	bool IsConnected()
+	{
+		// Zeroise the state
+		ZeroMemory(&_controllerState, sizeof(XINPUT_STATE));
 
-  	// Get the state
-  	DWORD Result = XInputGetState(_controllerNum, &_controllerState);
+		// Get the state
+		DWORD Result = XInputGetState(_controllerNum, &_controllerState);
 
-  	if(Result == ERROR_SUCCESS)
-  		return true;
-  	else
-  		return false;
-  }
+		if(Result == ERROR_SUCCESS)
+			return true;
+		else
+			return false;
+	}
 
-    void Vibrate(int leftVal = 0, int rightVal = 0)
-  {
-  	// Create a Vibraton State
-  	XINPUT_VIBRATION Vibration;
+	void Vibrate(int leftVal = 0, int rightVal = 0)
+	{
+		// Create a Vibraton State
+		XINPUT_VIBRATION Vibration;
 
-  	// Zeroise the Vibration
-  	ZeroMemory(&Vibration, sizeof(XINPUT_VIBRATION));
+		// Zeroise the Vibration
+		ZeroMemory(&Vibration, sizeof(XINPUT_VIBRATION));
 
-  	// Set the Vibration Values
-  	Vibration.wLeftMotorSpeed = leftVal;
-  	Vibration.wRightMotorSpeed = rightVal;
+		// Set the Vibration Values
+		Vibration.wLeftMotorSpeed = leftVal;
+		Vibration.wRightMotorSpeed = rightVal;
 
-  	// Vibrate the controller
-  	XInputSetState(_controllerNum, &Vibration);
-  }
+		// Vibrate the controller
+		XInputSetState(_controllerNum, &Vibration);
+	}
 
-  xControl(void);
-  ~xControl(void);
+	xControl(void);
+	~xControl(void);
 };
 #endif
 

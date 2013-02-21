@@ -23,16 +23,14 @@
 class Input
 {
 private: 
-LPDIRECTINPUT8  		g_lpDirect_Input_Object;		//the direct input object
-LPDIRECTINPUTDEVICE8  g_lpDirect_Input_Device;		//the direct input device
-char  				m_cBuffer[256];					//array to hold the state of each key					
-
-
+	LPDIRECTINPUT8        g_lpDirect_Input_Object;      //the direct input object
+	LPDIRECTINPUTDEVICE8  g_lpDirect_Input_Device;      //the direct input device
+	char                  m_cBuffer[256];               //array to hold the state of each key					
 
 public:
-  Input();											//constructor
-  ~Input();											//destructor
-  int Direct_Input_Initialize(HINSTANCE hInstance);	
-  void Release();
-  void KeyPress();								//checks m_cBuffer to see what keys were pressed
+	Input();											//constructor
+	~Input();											//destructor
+	int Direct_Input_Initialize(HINSTANCE hInstance);	
+	void Release();
+	void KeyPress();									//checks m_cBuffer to see what keys were pressed
 };
