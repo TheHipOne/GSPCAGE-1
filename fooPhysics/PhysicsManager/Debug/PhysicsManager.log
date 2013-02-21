@@ -1,0 +1,6 @@
+﻿  PhysicsManager.cpp
+c:\users\the hip\documents\visual studio 2010\projects\physicsengine\physicsmanager\physicsmanager.cpp(35): warning C4101: 'pWorld' : unreferenced local variable
+c:\users\the hip\documents\visual studio 2010\projects\physicsengine\physicsmanager\physicsmanager.cpp(99): warning C4101: 'pPhysMan' : unreferenced local variable
+  main.cpp
+  Generating Code...
+  PhysicsManager.vcxproj -> C:\Users\The Hip\documents\visual studio 2010\Projects\PhysicsEngine\Debug\PhysicsManager.exe
