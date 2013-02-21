@@ -67,47 +67,53 @@ void UIInterface::Inventory_Draw()
 
 StatusBar UIInterface::CreateStatusBar(std::wstring name, int x, int y, int id, float value, float maxvalue, SpriteStrip imagelocation)
 {
-  return StatusBar(name, x, y, id, value, maxvalue, imagelocation);
+	  return StatusBar(name, x, y, id, value, maxvalue, imagelocation);
 }
 
 StatusIcon UIInterface::CreateStatusIcon(std::wstring name, int x, int y, int id, SpriteStrip imagelocation )
 {
-	return StatusIcon(name, x, y, id, imagelocation);
+		return StatusIcon(name, x, y, id, imagelocation);
 }
 
 TextBox UIInterface::CreateTextBox(std::wstring name, int x, int y, DWORD color, std::wstring message)
 {
-	return TextBox(name, x, y, color, message);
+		return TextBox(name, x, y, color, message);
 }
 
 
-void UIInterface::drawStatusBar(StatusBar sb, float val, SpriteStrip imagelocation, bool valwasmodified)
+void UIInterface::drawStatusBar(StatusBar sb, float val, SpriteStrip imageLocation, bool valwasmodified)
 {
-	if(valwasmodified == true){
-		sb.modifyValue(val, imagelocation);
-	}
-	sb.drawElement(imageLocation);
+		if(valwasmodified == true){
+					sb.modifyValue(val, imageLocation);
+		}
+			sb.drawElement(imageLocation);
 }
 
-void UIInterface::drawStatusIcon(StatusIcon si, int id, SpriteStrip imagelocation, bool changeimage)
+void UIInterface::drawStatusIcon(StatusIcon si, int id, SpriteStrip imageLocation, bool changeimage)
 {
-	if (changeimage == true){
-		si.changeImage(id, imageLocation);
-	}
-	si.drawElement(imagelocation);
+		if (changeimage == true){
+					si.changeImage(id, imageLocation);
+		}
+			si.drawElement(imageLocation);
 }
 
 void UIInterface::drawTextBox(TextBox tb, std::wstring message, DWORD color, bool isnewmessage, bool isnewcolor)
 {
-	if(isnewmessage == true){
-		tb.updateText(message);
-	}
-	if(isnewcolor == true){
-		tb.modifyColor(color);
-	}
-	tb.drawElement();
+		if(isnewmessage == true){
+					tb.updateText(message);
+		}
+			if(isnewcolor == true){
+						tb.modifyColor(color);
+			}
+				tb.drawElement();
 }
 
+}
+}
+}
+}
+}
+}
 
 //======================================================
 // Control functions
