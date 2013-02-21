@@ -96,7 +96,7 @@ void StateManager::InitRenderingCore(HINSTANCE hInstance)
 	EngineMain app(hInstance, "GSP420 CAGE", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
 	g_d3dApp = &app;
 
-    g_d3dApp->run();
+    g_d3dApp->Render();
 }
 
 void StateManager::Title(DWORD elapsedTime)

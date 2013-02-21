@@ -13,7 +13,7 @@
 #ifndef D3DAPP_H
 #define D3DAPP_H
 
-#include "d3dUtil.h"
+#include "..\..\RenderingCore\C++\d3dUtil.h"
 #include <string>
 
 class D3DApp
@@ -24,6 +24,12 @@ public:
 
 	HINSTANCE getAppInst();
 	HWND      getMainWnd();
+
+	//Rendering
+	static MSG msg;
+	static __int64 cntsPerSec;
+	static float secsPerCnt;
+	static __int64 prevTimeStamp;
 
 	// Framework methods.  Derived client class overrides these methods to 
 	// implement specific application requirements.
@@ -39,6 +45,8 @@ public:
 	virtual void initMainWindow();
 	virtual void initDirect3D();
 	virtual int run();
+	void Render();
+	void InitRenderVariables();
 	virtual LRESULT msgProc(UINT msg, WPARAM wParam, LPARAM lParam);
 
 	void enableFullScreenMode(bool enable);
