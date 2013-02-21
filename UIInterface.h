@@ -108,45 +108,47 @@ public:
   ------------------------------------------------------*/
   void Inventory_Draw();
 
-
 //======================================================
   // HUD functions
-  //======================================================
-
-  /*-----------------------------------------------------------------
-Purpose: creates a statusbar
--------------------------------------------------------------------*/
-  StatusBar CreateStatusBar(std::wstring, int, int, int, float, float, SpriteStrip );
-
-    /*-----------------------------------------------------------------
-Purpose: creates a statusicon
--------------------------------------------------------------------*/
-  StatusIcon CreateStatusIcon(std::wstring, int, int, int, SpriteStrip );
-
-    /*-----------------------------------------------------------------
-Purpose: creates a textbox
--------------------------------------------------------------------*/
-  TextBox CreateTextBox(std::wstring, int, int, DWORD, std::wstring );
-
-
-  /*-----------------------------------------------------------------
-Purpose: Draws the status bar on the screen
--------------------------------------------------------------------*/
-  void drawStatusBar(std::wstring, int, int, int, float, float, SpriteStrip );
-
-  /*-----------------------------------------------------------------
-Purpose: Draws the status icon or can be used as 2D animation if needed
--------------------------------------------------------------------*/
-
-    void drawStatusIcon(StatusIcon, int, SpriteStrip, bool);
-
-  /*-----------------------------------------------------------------
-Purpose: Draws a text box
--------------------------------------------------------------------*/
-
-
-    void drawTextBox(std::wstring, int, int, DWORD, std::wstring);
-
+    //======================================================
+    
+   /*-----------------------------------------------------------------
+      Purpose: creates a statusbar
+    -------------------------------------------------------------------*/
+       StatusBar CreateStatusBar(std::wstring, int, int, int, float, float, SpriteStrip );
+        
+       /*-----------------------------------------------------------------
+            Purpose: creates a statusicon
+     -------------------------------------------------------------------*/
+          StatusIcon CreateStatusIcon(std::wstring, int, int, int, SpriteStrip );
+              
+           /*-----------------------------------------------------------------
+                  Purpose: creates a textbox
+           -------------------------------------------------------------------*/
+               TextBox CreateTextBox(std::wstring, int, int, DWORD, std::wstring );
+                    
+                    
+                      /*-----------------------------------------------------------------
+                      Purpose: Draws the status bar on the screen
+                      -------------------------------------------------------------------*/
+                        void drawStatusBar(StatusBar, float, SpriteStrip, bool );
+                        
+                          /*-----------------------------------------------------------------
+                          Purpose: Draws the status icon or can be used as 2D animation if needed
+                          -------------------------------------------------------------------*/
+                          
+                              void drawStatusIcon(StatusIcon, int, SpriteStrip, bool);
+                              
+                                /*-----------------------------------------------------------------
+                                Purpose: Draws a text box
+                                -------------------------------------------------------------------*/
+                                
+                                
+                                    void drawTextBox(TextBox, std::wstring, DWORD, bool, bool);
+                                    
+                                    
+                                    
+                                    
 
 
 
