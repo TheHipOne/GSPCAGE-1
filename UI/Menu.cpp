@@ -1,4 +1,3 @@
-
 #include "Menu.h"
 #include "Keyboard_Input.h"
 #include "Background.h"
@@ -40,31 +39,31 @@ bool Menu::initialize(InputManager *Input, LPDIRECT3DDEVICE9 Device)
 	//Load Menu Images
 	//Load Background for Menu
 	background = new Background();
-	background->load(Device, "mBackground.png");
+	background->load(Device, L"mBackground.png");
 
 	//Load New Game Image
 	newGame = new Background();
-	newGame->load(Device, "NewGame_0.png");
+	newGame->load(Device, L"NewGame_0.png");
 	newGame->setPosition(340, 300);
 	newGameH = new Background();
-	newGameH->load(Device, "NewGame_1.png");
+	newGameH->load(Device, L"NewGame_1.png");
 	newGameH->setPosition(340,300);
 
 	//Load Options (have no images so using new game for now)
 	options = new Background();
-	options->load(Device, "NewGame_0.png");
+	options->load(Device, L"NewGame_0.png");
 	options->setPosition(340, 400);
 	optionsH = new Background();
-	optionsH->load(Device, "NewGame_1.png");
+	optionsH->load(Device, L"NewGame_1.png");
 	options->setPosition(340, 400);
 
 
 	//Load Exit Image
 	exit = new Background();
-	exit->load(Device, "Exit_0.png");
+	exit->load(Device, L"Exit_0.png");
 	exit->setPosition(340, 500);
 	exitH = new Background();
-	exitH->load(Device, "Exit_1.png");
+	exitH->load(Device, L"Exit_1.png");
 	exitH->setPosition(340, 500);
 
 	return true;
