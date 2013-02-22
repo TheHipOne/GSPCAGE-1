@@ -21,7 +21,7 @@ public:
 	Background(void);
 	virtual ~Background(void);
 
-	bool load(LPDIRECT3DDEVICE9 Device, std::string filename);
+	bool load(LPDIRECT3DDEVICE9 Device, std::wstring filename);
 	void render(LPDIRECT3DDEVICE9 Device);
 	void setPosition(int x, int y);
 	void setSize(int percent);
