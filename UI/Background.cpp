@@ -14,7 +14,7 @@ Background::~Background(void)
 	}
 }
 
-bool Background::load(LPDIRECT3DDEVICE9 Device, std::string filename)
+bool Background::load(LPDIRECT3DDEVICE9 Device, std::wstring filename)
 {
 	imageScale = 100;
 
