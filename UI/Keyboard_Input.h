@@ -30,7 +30,7 @@ private:
 public:
 	Input();											//constructor
 	~Input();											//destructor
-	int Direct_Input_Initialize(HINSTANCE hInstance);	
+	int Direct_Input_Initialize(HINSTANCE);	
 	void Release();
 	void KeyPress();									//checks m_cBuffer to see what keys were pressed
 };
