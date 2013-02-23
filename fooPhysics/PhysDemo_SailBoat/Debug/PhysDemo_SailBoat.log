@@ -1,6 +1,0 @@
-﻿  SailBoat.cpp
-c:\users\the hip\documents\visual studio 2010\projects\physicsengine\physdemo_sailboat\sailboat.cpp(177): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
-c:\users\the hip\documents\visual studio 2010\projects\physicsengine\physdemo_sailboat\sailboat.cpp(185): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
-  PhysDemo_SailBoat.vcxproj -> C:\Users\The Hip\documents\visual studio 2010\Projects\PhysicsEngine\Debug\PhysDemo_SailBoat.exe
