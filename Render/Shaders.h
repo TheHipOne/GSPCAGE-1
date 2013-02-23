@@ -21,7 +21,7 @@
 class Shader
 {
 public:
-	Shader(const std::string& filename);
+	Shader(const std::wstring& filename);
 	virtual ~Shader();
 	ID3DXEffect* m_FX;
 private:
@@ -33,7 +33,7 @@ private:
 class Basic : public Shader
 {
 public:
-	Basic(const std::string& filename);
+	Basic(const std::wstring& filename);
 	 ~Basic(void);
 	
 	/******************************************************
@@ -65,7 +65,7 @@ class VertexBlend : public Shader
 {
 public:
 
-	VertexBlend(const std::string& filename);
+	VertexBlend(const std::wstring& filename);
 	~VertexBlend(void);
 
 	/******************************************************

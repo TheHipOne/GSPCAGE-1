@@ -82,13 +82,13 @@ void GenTriGrid(int numVertRows, int numVertCols,
 }
 
 void LoadXFile(
-	const std::string& filename, 
+	const std::wstring& filename, 
 	ID3DXMesh** meshOut,
 	std::vector<Mtrl>& mtrls, 
 	std::vector<IDirect3DTexture9*>& texs)
 {
 	// Step 1: Load the .x file from file into a system memory mesh.
-	std::string fileStart = "..\\..\\RenderingCore\\Models\\";
+	std::wstring fileStart = L"Models\\";
 	ID3DXMesh* meshSys      = 0;
 	ID3DXBuffer* adjBuffer  = 0;
 	ID3DXBuffer* mtrlBuffer = 0;
@@ -170,7 +170,7 @@ void LoadXFile(
 			{
 				// Yes, load the texture for the ith subset
 				IDirect3DTexture9* tex = 0;
-				char* texFN = d3dxmtrls[i].pTextureFilename;
+				wchar_t* texFN = (TCHAR*)d3dxmtrls[i].pTextureFilename;
 				HR(D3DXCreateTextureFromFile(g_d3dDevice, texFN, &tex));
 
 				// Save the loaded texture

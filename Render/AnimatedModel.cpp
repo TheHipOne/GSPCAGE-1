@@ -1,7 +1,7 @@
 #include "AnimatedModel.h"
 
 
-AnimatedModel::AnimatedModel(const std::string& modelFileName) : Model(modelFileName)
+AnimatedModel::AnimatedModel(const std::wstring& modelFileName) : Model(modelFileName)
 {
 	AllocMeshHierarchy allocMeshHierarchy;
 	HR(D3DXLoadMeshHierarchyFromX(modelFileName.c_str(), D3DXMESH_SYSTEMMEM,
@@ -32,7 +32,7 @@ AnimatedModel::AnimatedModel(const std::string& modelFileName) : Model(modelFile
 	m_WhiteMtrl.specPower = 48.0f;
 }
 
-AnimatedModel::AnimatedModel(const std::string& modelFileName, const std::string& textureFileName) : Model(modelFileName, textureFileName)
+AnimatedModel::AnimatedModel(const std::wstring& modelFileName, const std::wstring& textureFileName) : Model(modelFileName, textureFileName)
 {
 	AllocMeshHierarchy allocMeshHierarchy;
 	HR(D3DXLoadMeshHierarchyFromX(modelFileName.c_str(), D3DXMESH_SYSTEMMEM,
@@ -249,29 +249,29 @@ void AnimatedModel::buildSkinnedMesh(ID3DXMesh* mesh)
 	D3DVERTEXELEMENT9 elems[MAX_FVF_DECL_SIZE];
 	HR(m_Model->GetDeclaration(elems));
 	
-	OutputDebugString("\nVertex Format After ConvertToIndexedBlendedMesh\n");
+	OutputDebugString(L"\nVertex Format After ConvertToIndexedBlendedMesh\n");
 	int i = 0;
 	while( elems[i].Stream != 0xff ) // While not D3DDECL_END()
 	{
 		if( elems[i].Type == D3DDECLTYPE_FLOAT1)
-			OutputDebugString("Type = D3DDECLTYPE_FLOAT1; ");
+			OutputDebugString(L"Type = D3DDECLTYPE_FLOAT1; ");
 		if( elems[i].Type == D3DDECLTYPE_FLOAT2)
-			OutputDebugString("Type = D3DDECLTYPE_FLOAT2; ");
+			OutputDebugString(L"Type = D3DDECLTYPE_FLOAT2; ");
 		if( elems[i].Type == D3DDECLTYPE_FLOAT3)
-			OutputDebugString("Type = D3DDECLTYPE_FLOAT3; ");
+			OutputDebugString(L"Type = D3DDECLTYPE_FLOAT3; ");
 		if( elems[i].Type == D3DDECLTYPE_UBYTE4)
-			OutputDebugString("Type = D3DDECLTYPE_UBYTE4; ");
+			OutputDebugString(L"Type = D3DDECLTYPE_UBYTE4; ");
 	
 		if( elems[i].Usage == D3DDECLUSAGE_POSITION)
-			OutputDebugString("Usage = D3DDECLUSAGE_POSITION\n");
+			OutputDebugString(L"Usage = D3DDECLUSAGE_POSITION\n");
 		if( elems[i].Usage == D3DDECLUSAGE_BLENDWEIGHT)
-			OutputDebugString("Usage = D3DDECLUSAGE_BLENDWEIGHT\n");
+			OutputDebugString(L"Usage = D3DDECLUSAGE_BLENDWEIGHT\n");
 		if( elems[i].Usage == D3DDECLUSAGE_BLENDINDICES)
-			OutputDebugString("Usage = D3DDECLUSAGE_BLENDINDICES\n");
+			OutputDebugString(L"Usage = D3DDECLUSAGE_BLENDINDICES\n");
 		if( elems[i].Usage == D3DDECLUSAGE_NORMAL)
-			OutputDebugString("Usage = D3DDECLUSAGE_NORMAL\n");
+			OutputDebugString(L"Usage = D3DDECLUSAGE_NORMAL\n");
 		if( elems[i].Usage == D3DDECLUSAGE_TEXCOORD)
-			OutputDebugString("Usage = D3DDECLUSAGE_TEXCOORD\n");
+			OutputDebugString(L"Usage = D3DDECLUSAGE_TEXCOORD\n");
 		++i;
 	} 
 #endif

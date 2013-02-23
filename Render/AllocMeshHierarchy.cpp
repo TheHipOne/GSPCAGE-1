@@ -4,13 +4,14 @@
 
 #include "AllocMeshHierarchy.h"
 
-void CopyString(const char* input, char** output)
+void CopyString(const wchar_t* input, wchar_t** output)
 {
+	
 	if( input )
 	{
-		UINT length = (UINT)::strlen(input) + 1; // add 1 for terminating null charater.
-		*output = new char[length];
-		::strcpy(*output, input);
+		UINT length = (UINT)::wcslen(input) + 1; // add 1 for terminating null charater.
+		*output = new wchar_t[length];
+		::wcscpy_s(*output, length, input);
 	}
 	else
 	{
@@ -18,7 +19,7 @@ void CopyString(const char* input, char** output)
 	}
 }
 
-HRESULT AllocMeshHierarchy::CreateFrame(PCTSTR Name, D3DXFRAME** ppNewFrame)
+HRESULT AllocMeshHierarchy::CreateFrame(PCSTR Name, D3DXFRAME** ppNewFrame)
 {
 	// Remark: CreateFrame must return a non-null value for ppNewFrame,
 	// otherwise D3DXLoadMeshHierarchyFromX will interpret it as 
@@ -27,8 +28,8 @@ HRESULT AllocMeshHierarchy::CreateFrame(PCTSTR Name, D3DXFRAME** ppNewFrame)
 
 	FrameEx* frameEx = new FrameEx();
 
-	if( Name )	CopyString(Name, &frameEx->Name);
-	else		CopyString("<no name>", &frameEx->Name);
+	if( Name )	CopyString((LPCWSTR)Name, (wchar_t**)&frameEx->Name);
+	else		CopyString(L"<no name>", (wchar_t**)&frameEx->Name);
 
 	frameEx->pMeshContainer = 0;
 	frameEx->pFrameSibling = 0;
@@ -38,14 +39,14 @@ HRESULT AllocMeshHierarchy::CreateFrame(PCTSTR Name, D3DXFRAME** ppNewFrame)
 
 	*ppNewFrame = frameEx;
 
-    return D3D_OK;
+	return D3D_OK;
 }
 
-HRESULT AllocMeshHierarchy::CreateMeshContainer(PCTSTR Name, 
-	const D3DXMESHDATA* pMeshData, const D3DXMATERIAL* pMaterials, 
-	const D3DXEFFECTINSTANCE* pEffectInstances, DWORD NumMaterials, 
-	const DWORD *pAdjacency, ID3DXSkinInfo* pSkinInfo, 
-	D3DXMESHCONTAINER** ppNewMeshContainer)
+HRESULT AllocMeshHierarchy::CreateMeshContainer(PCSTR Name, 
+												const D3DXMESHDATA* pMeshData, const D3DXMATERIAL* pMaterials, 
+												const D3DXEFFECTINSTANCE* pEffectInstances, DWORD NumMaterials, 
+												const DWORD *pAdjacency, ID3DXSkinInfo* pSkinInfo, 
+												D3DXMESHCONTAINER** ppNewMeshContainer)
 {	
 	// Remark: CreateMeshContainer should always return a non-null value
 	// for ppNewMeshContainer, even if we are not interested in the mesh 
@@ -56,10 +57,10 @@ HRESULT AllocMeshHierarchy::CreateMeshContainer(PCTSTR Name,
 	//===============================================================
 	// Allocate a new D3DXMESHCONTAINER, and set its name.  
 
-    D3DXMESHCONTAINER* meshContainer = new D3DXMESHCONTAINER();
+	D3DXMESHCONTAINER* meshContainer = new D3DXMESHCONTAINER();
 	::ZeroMemory(meshContainer, sizeof(D3DXMESHCONTAINER));	
-	if( Name )	CopyString(Name, &meshContainer->Name);
-	else        CopyString("<no name>", &meshContainer->Name);
+	if( Name )	CopyString((LPCWSTR)Name, (wchar_t**)&meshContainer->Name);
+	else        CopyString(L"<no name>", (wchar_t**)&meshContainer->Name);
 
 
 	//===============================================================
@@ -77,7 +78,7 @@ HRESULT AllocMeshHierarchy::CreateMeshContainer(PCTSTR Name,
 
 	if( pSkinInfo == 0 || pMeshData->Type != D3DXMESHTYPE_MESH)
 		return D3D_OK;
-	
+
 
 	//===============================================================
 	// Copy material data, and allocate memory for texture file names.
@@ -90,8 +91,8 @@ HRESULT AllocMeshHierarchy::CreateMeshContainer(PCTSTR Name,
 		mtrls[i].MatD3D = pMaterials[i].MatD3D;
 		mtrls[i].MatD3D.Ambient = pMaterials[i].MatD3D.Diffuse;
 
-		CopyString(pMaterials[i].pTextureFilename, 
-			&mtrls[i].pTextureFilename);
+		CopyString((wchar_t*)pMaterials[i].pTextureFilename, 
+			(wchar_t**)&mtrls[i].pTextureFilename);
 	}
 
 
@@ -111,15 +112,15 @@ HRESULT AllocMeshHierarchy::CreateMeshContainer(PCTSTR Name,
 	pMeshData->pMesh->AddRef();
 	pSkinInfo->AddRef();
 
-    return D3D_OK;
+	return D3D_OK;
 }
 
 HRESULT AllocMeshHierarchy::DestroyFrame(D3DXFRAME* pFrameToFree) 
 {
 	delete[] pFrameToFree->Name;
 	delete pFrameToFree;
- 
-    return D3D_OK; 
+
+	return D3D_OK; 
 }
 
 HRESULT AllocMeshHierarchy::DestroyMeshContainer(D3DXMESHCONTAINER* pMeshContainerBase)
@@ -127,7 +128,7 @@ HRESULT AllocMeshHierarchy::DestroyMeshContainer(D3DXMESHCONTAINER* pMeshContain
 	delete[] pMeshContainerBase->Name;
 	delete[] pMeshContainerBase->pAdjacency;
 	delete[] pMeshContainerBase->pEffects;
- 
+
 	for(DWORD i = 0; i < pMeshContainerBase->NumMaterials; ++i)
 		delete[] pMeshContainerBase->pMaterials[i].pTextureFilename;
 
@@ -135,8 +136,8 @@ HRESULT AllocMeshHierarchy::DestroyMeshContainer(D3DXMESHCONTAINER* pMeshContain
 
 	ReleaseCOM(pMeshContainerBase->MeshData.pMesh);
 	ReleaseCOM(pMeshContainerBase->pSkinInfo);
- 
+
 	delete pMeshContainerBase;
- 
-    return D3D_OK;
+
+	return D3D_OK;
 }

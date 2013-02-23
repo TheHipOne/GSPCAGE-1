@@ -18,7 +18,7 @@ MainWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
-D3DApp::D3DApp(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, DWORD requestedVP)
+D3DApp::D3DApp(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE devType, DWORD requestedVP)
 {
 	m_MainWndCaption = winCaption;
 	m_DevType        = devType;
@@ -62,11 +62,11 @@ void D3DApp::initMainWindow()
 	wc.hCursor       = LoadCursor(0, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 	wc.lpszMenuName  = 0;
-	wc.lpszClassName = "D3DWndClassName";
+	wc.lpszClassName = L"D3DWndClassName";
 
 	if( !RegisterClass(&wc) )
 	{
-		MessageBox(0, "RegisterClass FAILED", 0, 0);
+		MessageBox(0, L"RegisterClass FAILED", 0, 0);
 		PostQuitMessage(0);
 	}
 
@@ -74,13 +74,13 @@ void D3DApp::initMainWindow()
 
 	RECT R = {0, 0, 800, 600};
 	AdjustWindowRect(&R, WS_OVERLAPPEDWINDOW, false);
-	m_hMainWnd = CreateWindow("D3DWndClassName", m_MainWndCaption.c_str(), 
+	m_hMainWnd = CreateWindow(L"D3DWndClassName", m_MainWndCaption.c_str(), 
 		WS_OVERLAPPEDWINDOW, 100, 100, R.right, R.bottom, 
 		0, 0, m_hAppInst, 0); 
 
 	if( !m_hMainWnd )
 	{
-		MessageBox(0, "CreateWindow FAILED", 0, 0);
+		MessageBox(0, L"CreateWindow FAILED", 0, 0);
 		PostQuitMessage(0);
 	}
 
@@ -95,7 +95,7 @@ void D3DApp::initDirect3D()
     m_d3dObject = Direct3DCreate9(D3D_SDK_VERSION);
 	if( !m_d3dObject )
 	{
-		MessageBox(0, "Direct3DCreate9 FAILED", 0, 0);
+		MessageBox(0, L"Direct3DCreate9 FAILED", 0, 0);
 		PostQuitMessage(0);
 	}
 
@@ -379,7 +379,7 @@ bool D3DApp::isDeviceLost()
 	// Driver error, exit.
 	else if( hr == D3DERR_DRIVERINTERNALERROR )
 	{
-		MessageBox(0, "Internal Driver Error...Exiting", 0, 0);
+		MessageBox(0, L"Internal Driver Error...Exiting", 0, 0);
 		PostQuitMessage(0);
 		return true;
 	}

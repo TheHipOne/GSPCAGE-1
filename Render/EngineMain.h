@@ -26,7 +26,7 @@
 class EngineMain : public D3DApp
 {
 public:
-	EngineMain(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, DWORD requestedVP);
+	EngineMain(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE devType, DWORD requestedVP);
 	~EngineMain();
 
 	bool checkDeviceCaps();

@@ -23,8 +23,8 @@ public:
 	std::vector<IDirect3DTexture9*> m_ModelTex;
 	IDirect3DTexture9* defaultTex;
 
-	Model(const std::string& modelFileName);
-	Model(const std::string& modelFileName, const std::string& textureFileName);
+	Model(const std::wstring& modelFileName);
+	Model(const std::wstring& modelFileName, const std::wstring& textureFileName);
 	~Model(void);
 
 	void DrawModel(D3DXMATRIX wVPM);

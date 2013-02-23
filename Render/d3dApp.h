@@ -19,7 +19,7 @@
 class D3DApp
 {
 public:
-	D3DApp(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, DWORD requestedVP);
+	D3DApp(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE devType, DWORD requestedVP);
 	virtual ~D3DApp();
 
 	HINSTANCE getAppInst();
@@ -47,7 +47,7 @@ public:
 protected:
 	// Derived client class can modify these data members in the constructor to 
 	// customize the application.  
-	std::string m_MainWndCaption;
+	std::wstring m_MainWndCaption;
 	D3DDEVTYPE  m_DevType;
 	DWORD       m_dRequestedVP;
 	

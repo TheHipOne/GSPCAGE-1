@@ -13,13 +13,13 @@
 * Loads the .fx file and puts it in the ID3DXEffect
 *******************************************************/
 
-Shader::Shader(const std::string& filename): m_FX(0)
+Shader::Shader(const std::wstring& filename): m_FX(0)
 {
 	ID3DXBuffer* errors = 0;
 	HR(D3DXCreateEffectFromFile(g_d3dDevice, filename.c_str(), 
 		0, 0, D3DXSHADER_DEBUG, 0, &m_FX, &errors));
 	if (errors)
-		MessageBox(0, (char*)errors->GetBufferPointer(), 0, 0);
+		MessageBox(0, (wchar_t*)errors->GetBufferPointer(), 0, 0);
 }
 
 
@@ -31,7 +31,7 @@ Shader::~Shader()
 /******************************************************
 * Sets the handles between the C++ and .fx variables
 *******************************************************/
-Basic::Basic(const std::string& filename) : Shader(filename)
+Basic::Basic(const std::wstring& filename) : Shader(filename)
 {
 	m_hTech           = m_FX->GetTechniqueByName("DirLightTech"); 
 	m_hWorld          = m_FX->GetParameterByName(0, "gWorld");
@@ -43,7 +43,7 @@ Basic::Basic(const std::string& filename) : Shader(filename)
 	m_hDirLight		  = m_FX->GetParameterByName(0, "gDirLight");
 }
 
-VertexBlend::VertexBlend(const std::string& filename) : Shader(filename)
+VertexBlend::VertexBlend(const std::wstring& filename) : Shader(filename)
 {
 	m_hTech           = m_FX->GetTechniqueByName("VBlend2Tech"); 
 	m_hWorld          = m_FX->GetParameterByName(0, "gWorld");
@@ -70,8 +70,8 @@ VertexBlend* Shaders::VBlendFX = 0;
 
 void Shaders::InitAll()
 {
-	BasicFX  = new Basic("..\\..\\RenderingCore\\FX\\lighting.fx");
-	VBlendFX = new VertexBlend("..\\..\\RenderingCore\\FX\\vblend2.fx");
+	BasicFX  = new Basic(L"FX\\lighting.fx");
+	VBlendFX = new VertexBlend(L"FX\\vblend2.fx");
 }
 
 void Shaders::DestroyAll()

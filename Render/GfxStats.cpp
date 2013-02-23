@@ -20,7 +20,7 @@ GfxStats::GfxStats()
     fontDesc.OutputPrecision = OUT_DEFAULT_PRECIS;
     fontDesc.Quality         = DEFAULT_QUALITY;
     fontDesc.PitchAndFamily  = DEFAULT_PITCH | FF_DONTCARE;
-    _tcscpy(fontDesc.FaceName, _T("Times New Roman"));
+    _tcscpy_s(fontDesc.FaceName, _T("Times New Roman"));
 
 	HR(D3DXCreateFontIndirect(g_d3dDevice, &fontDesc, &m_Font));
 }
@@ -83,13 +83,13 @@ void GfxStats::update(float dt)
 void GfxStats::display()
 {
 	// Make static so memory is not allocated every frame.
-	static char buffer[256];
+	static wchar_t buffer[256];
 
-	sprintf(buffer, "Frames Per Second = %.2f\n"
-		"Milliseconds Per Frame = %.4f\n"
-		"Triangle Count = %d\n"
-		"Vertex Count = %d", m_FPS, m_MilliSecPerFrame, m_NumTris, m_NumVertices);
-
+	swprintf_s(buffer, L"Frames Per Second = %.2f\n"
+		L"Milliseconds Per Frame = %.4f\n"
+		L"Triangle Count = %d\n"
+		L"Vertex Count = %d", m_FPS, m_MilliSecPerFrame, m_NumTris, m_NumVertices);
+	
 	RECT R = {5, 5, 0, 0};
 	HR(m_Font->DrawText(0, buffer, -1, &R, DT_NOCLIP, D3DCOLOR_XRGB(0,0,0)));
 }

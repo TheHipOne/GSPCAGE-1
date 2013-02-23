@@ -78,7 +78,7 @@ struct DirLight
 // .X Files
 
 void LoadXFile(
-	const std::string& filename, 
+	const std::wstring& filename, 
 	ID3DXMesh** meshOut, 
 	std::vector<Mtrl>& mtrls, 
 	std::vector<IDirect3DTexture9*>& texs);
@@ -122,13 +122,13 @@ struct BoundingSphere
 
 #if defined(DEBUG) | defined(_DEBUG)
 	#ifndef HR
-	#define HR(x)                                      \
-	{                                                  \
-		HRESULT hr = x;                                \
-		if(FAILED(hr))                                 \
-		{                                              \
-			DXTrace(__FILE__, __LINE__, hr, #x, TRUE); \
-		}                                              \
+	#define HR(x)                                             \
+	{                                                         \
+		HRESULT hr = x;                                       \
+		if(FAILED(hr))                                        \
+		{                                                     \
+			DXTrace(__FILE__, __LINE__, hr, L#x, TRUE); \
+		}                                                     \
 	}
 	#endif
 

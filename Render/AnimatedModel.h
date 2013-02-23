@@ -17,8 +17,8 @@ struct FrameEx : public D3DXFRAME
 class AnimatedModel : public Model
 {
 public:
-	AnimatedModel(const std::string& modelFileName);
-	AnimatedModel(const std::string& modelFileName, const std::string& textureFileName);
+	AnimatedModel(const std::wstring& modelFileName);
+	AnimatedModel(const std::wstring& modelFileName, const std::wstring& textureFileName);
 	~AnimatedModel(void);
 
 	UINT numVertices();

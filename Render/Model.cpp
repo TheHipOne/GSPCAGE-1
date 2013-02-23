@@ -14,12 +14,12 @@
 * variables as well
 *******************************************************/
 
-Model::Model(const std::string& modelFileName)
+Model::Model(const std::wstring& modelFileName)
 {
 	LoadXFile(modelFileName.c_str(), &m_Model, m_ModelMtrl, m_ModelTex);
 	defaultTex = 0;
 }
-Model::Model(const std::string& modelFileName, const std::string& textureFileName)
+Model::Model(const std::wstring& modelFileName, const std::wstring& textureFileName)
 {
 	LoadXFile(modelFileName.c_str(), &m_Model, m_ModelMtrl, m_ModelTex);
 

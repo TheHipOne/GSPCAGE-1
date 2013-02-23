@@ -20,7 +20,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 		_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
 	#endif
 
-	EngineMain app(hInstance, "GSP420 Engine", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
+	EngineMain app(hInstance, L"GSP420 Engine", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
 	g_d3dApp = &app;
 
 	DirectInput di(DISCL_NONEXCLUSIVE|DISCL_FOREGROUND, DISCL_NONEXCLUSIVE|DISCL_FOREGROUND);
@@ -29,13 +29,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
     return g_d3dApp->run();
 }
 
-EngineMain::EngineMain(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE devType, DWORD requestedVP)
+EngineMain::EngineMain(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE devType, DWORD requestedVP)
 : D3DApp(hInstance, winCaption, devType, requestedVP)
 {
 
 	if(!checkDeviceCaps())
 	{
-		MessageBox(0, "checkDeviceCaps() Failed", 0, 0);
+		MessageBox(0, L"checkDeviceCaps() Failed", 0, 0);
 		PostQuitMessage(0);
 	}
 
@@ -58,9 +58,9 @@ EngineMain::EngineMain(HINSTANCE hInstance, std::string winCaption, D3DDEVTYPE d
 
 	
 
-	dwarf =  new Model("dwarf.x");
-	skull =	 new Model("skullocc.x");
-	tiny  =  new Model("tiny.x");
+	dwarf =  new Model(L"dwarf.x");
+	skull =	 new Model(L"skullocc.x");
+	tiny  =  new Model(L"tiny.x");
 
 	m_GfxStats->addVertices(skull->m_Model->GetNumVertices());
 	m_GfxStats->addTriangles(skull->m_Model->GetNumFaces());
