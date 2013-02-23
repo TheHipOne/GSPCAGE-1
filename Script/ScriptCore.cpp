@@ -54,7 +54,7 @@ luafunc_mbox( lua_State *L )
 	const char *title = (const char*)LibFuncs::lua_tolstring( L, 1, NULL );
 	const char *msg = (const char*)LibFuncs::lua_tolstring( L, 2, NULL );
 
-	MessageBox( NULL, msg, title, MB_OK | MB_ICONERROR );
+	MessageBox( NULL, (LPCWSTR)msg, (LPCWSTR)title, MB_OK | MB_ICONERROR );
 
 	return ( 0 );
 }
@@ -93,7 +93,7 @@ ScriptCore::IDE( std::string sName )
 	HINSTANCE tLib;
 
 #if defined(_WIN32)
-	tLib = LoadLibrary( "LUA-library.dll" );
+	tLib = LoadLibrary( L"lua52.dll" );
 #endif
 
 	if ( NULL != tLib ) {
@@ -155,7 +155,7 @@ ScriptCore::IDE( std::string sName )
 		}
 		else {
 			MessageBox( NULL,
-				TEXT( "Could not load all functions that are supposed to be located in the LUA-library.dll" ),
+				TEXT( "Could not load all functions that are supposed to be located in the lua52.dll" ),
 				TEXT( "Failed to start IDE" ),
 				MB_OK | MB_ICONERROR );
 		}
@@ -165,7 +165,7 @@ ScriptCore::IDE( std::string sName )
 	}
 	else {
 		MessageBox( NULL,
-			TEXT( "The LUA-library.dll could not be found or loaded, please check the working directory of the application."),
+			TEXT( "The lua52.dll could not be found or loaded, please check the working directory of the application."),
 			TEXT( "Failed to initialize IDE"),
 			MB_OK | MB_ICONERROR );
 	}
@@ -183,7 +183,7 @@ ScriptCore::execute( std::string sName )
 	HINSTANCE tLib;
 
 #if defined(_WIN32)
-	tLib = LoadLibrary( "LUA-library.dll" );
+	tLib = LoadLibrary( L"lua52.dll" );
 #endif
 
 	if ( NULL != tLib ) {
@@ -239,7 +239,7 @@ ScriptCore::execute( std::string sName )
 	}
 	else {
 		MessageBox( NULL,
-			TEXT( "The LUA-library.dll could not be found or loaded, please check the working directory of the application."),
+			TEXT( "The lua52.dll could not be found or loaded, please check the working directory of the application."),
 			TEXT( "Failed to initialize IDE"),
 			MB_OK | MB_ICONERROR );
 	}
