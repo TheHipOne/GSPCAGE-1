@@ -93,7 +93,7 @@ void StateManager::InitRenderingCore(HINSTANCE hInstance)
 		_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
 	#endif
 
-	EngineMain app(hInstance, "GSP420 CAGE", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
+	EngineMain app(hInstance, L"GSP420 CAGE", D3DDEVTYPE_HAL, D3DCREATE_HARDWARE_VERTEXPROCESSING);
 	g_d3dApp = &app;
 
     g_d3dApp->run();
