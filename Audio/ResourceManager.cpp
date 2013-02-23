@@ -202,3 +202,5 @@ void cResourceManager::setCurrentScope(unsigned int Scope)
 	}
 
 }
+
+void main () {}
