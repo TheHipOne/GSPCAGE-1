@@ -71,7 +71,7 @@ HRESULT Inventory::setProperty(std::wstring fn, DWORD color, int n, int l, int r
 	{
 		int i = std::distance(ItemList.begin(), it); // temp variable that stores the current index position
 		newIcon(fn, i+1); // add one because 0 is reserved for empty icon
-		newItem(fn, i, -1, i+1); // add one because 0 is reserved for empty icon
+		newItem(fn, i+1, i, -1); // add one because 0 is reserved for empty icon
 	}
 
 	//==============================================
@@ -137,7 +137,7 @@ HRESULT Inventory::setProperty(std::wstring fn, std::wstring bk, int n, int l, i
 	{
 		int i = std::distance(ItemList.begin(), it); // temp variable that stores the current index position
 		newIcon(fn, i+1); // add one because 0 is reserved for empty icon
-		newItem(fn, i, -1, i+1); // add one because 0 is reserved for empty icon
+		newItem(fn, i+1, i, -1); // add one because 0 is reserved for empty icon
 	}
 
 	//==============================================
