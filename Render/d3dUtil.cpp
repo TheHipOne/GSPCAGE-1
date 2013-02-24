@@ -4,6 +4,7 @@
 
 #include "d3dUtil.h"
 #include "Vertex.h"
+#define SAFE_DELETE(a) { delete (a); (a) = NULL; }
 
 void GenTriGrid(int numVertRows, int numVertCols,
 				float dx, float dz, 
@@ -184,4 +185,67 @@ void LoadXFile(
 		}
 	}
 	ReleaseCOM(mtrlBuffer); // done w/ buffer
+}
+
+
+//-------------------------------------------------------------------------------
+//===============================================================================
+//---------------------------Load Data from XML----------------------------------
+//===============================================================================
+
+//Instantiates variables every time cResourceManager finds an audio asset
+
+cResource* cRenderManager::load3DFromXML(TiXmlElement *Element)
+{
+	if(Element)
+	{
+		cRenderResource* Resource = new cRenderResource();
+		
+		for(TiXmlAttribute* ElementAttrib = Element->FirstAttribute(); ElementAttrib; ElementAttrib= ElementAttrib->Next())
+		{
+			//examine our audio resource object
+			std::string AttribName = ElementAttrib->Name();
+			std::string AttribValue = ElementAttrib->Value();
+
+			if(AttribName=="UID")
+			{
+				Resource->m_ResourceID = atoi(AttribValue.c_str());
+				
+			}
+			if(AttribName=="filename")
+			{
+				Resource->m_FileName = AttribValue;
+			}
+			if(AttribName=="scenescope")
+			{
+				Resource->m_Scope = atoi(AttribValue.c_str());
+			}
+
+		}
+		return Resource;
+	}
+	return NULL;
+}
+
+
+void cRenderResource::load()
+{
+	ID3DXMesh* tempMesh;
+	LoadXFile(StringToLPCWSTR(m_FileName), &tempMesh, mMtrl, mTex);
+	mMesh = tempMesh;
+	
+}
+
+void cRenderResource::unload()
+{
+	if (mMesh != NULL)
+	{
+		SAFE_DELETE(mMesh);
+	}
+
+}
+LPCWSTR cRenderResource::StringToLPCWSTR(std::string s_Variable)
+{
+	std::wstring ws_Temp = std::wstring(s_Variable.begin(), s_Variable.end());
+	return ws_Temp.c_str();
 }

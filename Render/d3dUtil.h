@@ -24,6 +24,7 @@
 #include <sstream>
 #include <vector>
 #include <fstream>
+#include "../Audio/ResourceManager.h"
 
 //===============================================================
 // Globals for convenient access.
@@ -116,6 +117,44 @@ struct BoundingSphere
 	D3DXVECTOR3 pos;
 	float radius;
 };
+
+class cRenderManager
+{
+
+public:
+	cResource* load3DFromXML(TiXmlElement *Element);
+	cRenderManager(){};
+	~cRenderManager(){};
+
+
+};
+
+//-------------------------------------------------------------------------------
+//===============================================================================
+//---------------------------RenderResource Interface class----------------------------
+//===============================================================================
+class cRenderResource : public cResource 
+{
+private:
+	ID3DXMesh* mMesh;
+	std::vector<Mtrl> mMtrl;
+	std::vector<IDirect3DTexture9*> mTex;
+protected:
+public:
+
+	//To be overloaded by derived classes
+	
+	void load();
+	void unload();
+	LPCWSTR StringToLPCWSTR(std::string s_Variable);	
+	
+	inline cRenderResource()
+	{
+		m_ResourceID = m_Scope = 0;
+		m_Type = RESOURCE_GRAPHIC;
+	}
+};
+
 
 //===============================================================
 // Debug

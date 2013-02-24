@@ -9,14 +9,14 @@
 #include <string>
 
 //Tiny XML header, needs tinyXML library
-#include "tinyxml.h"
-#include "fmod.h"
-#include "fmod.hpp"
-#include "fmod_codec.h"
-#include "fmod_dsp.h"
-#include "fmod_errors.h"
-#include "fmod_memoryinfo.h"
-#include "fmod_output.h"
+#include "tiny\tinyxml.h"
+#include "fmod\include\fmod.h"
+#include "fmod\include\fmod.hpp"
+#include "fmod\include\fmod_codec.h"
+#include "fmod\include\fmod_dsp.h"
+#include "fmod\include\fmod_errors.h"
+#include "fmod\include\fmod_memoryinfo.h"
+#include "fmod\include\fmod_output.h"
 
 
 //Enum to indicate resource type
