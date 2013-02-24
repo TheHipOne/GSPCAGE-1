@@ -105,12 +105,16 @@ void Input::KeyPress()
 		// Could be we failed for some other reason
 		if (FAILED(hr))
 			return;
+			
+	
 
 	}
 
 
 
 	//check what keys are currently being pressed
+	//Checks keypress every cycle. Needs to send appropriate call depending on game state. 
+	//I.e. if menu is up, needs to control menu. If Menu is down, needs to control character. 
 	g_lpDirect_Input_Device->GetDeviceState( sizeof(m_cBuffer), (LPVOID) &m_cBuffer );
 
 
