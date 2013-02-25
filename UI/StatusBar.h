@@ -28,7 +28,7 @@ class StatusBar :
 	RECT destination;							//location to be drawn
 	LPDIRECT3DVERTEXBUFFER9 m_pVertexObject;    //vertex buffer for drawing
 	CUSTOMVERTEX m_Vertices[4];					//go into the vertex buffer
-
+	
 public:
 	StatusBar(std::wstring, int, int, int, float, float, SpriteStrip);	//m_wsHOName, x, y, m_iImageID, m_fValue, m_fMaxValue, SpriteStrip
 	~StatusBar(void);
@@ -38,6 +38,7 @@ public:
 	void modifyValue(float, SpriteStrip);	//increase and decrease the current bar width
 	float getValue();						//returns m_fValue;
 	std::wstring getName();					//returns m_wsHOName
+	void changeImage(int);
 };
 
 #endif // !UI_STATUSBAR_H
