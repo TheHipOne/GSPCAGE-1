@@ -99,3 +99,7 @@ std::wstring StatusBar::getName()
 {
 	return m_wsHOName;
 }
+
+void StatusBar::changeImage(int id){
+	m_iImageID = id;
+}
