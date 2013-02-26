@@ -56,6 +56,7 @@ bool cResourceManager::loadFromXMLFile(std::string Filename)
 							//added to resource list.  
 							if(AttribValue=="graphic")
 							{
+								//call the render manager to instantiate an instance of render resource
 								Resource = g_renderManager->load3DFromXML(Element);
 							}
 
