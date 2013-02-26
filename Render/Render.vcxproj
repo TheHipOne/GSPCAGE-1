@@ -72,6 +72,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Audio\tiny\tinystr.h" />
+    <ClInclude Include="..\Audio\tiny\tinyxml.h" />
     <ClInclude Include="AllocMeshHierarchy.h" />
     <ClInclude Include="AnimatedModel.h" />
     <ClInclude Include="Camera.h" />
@@ -89,6 +91,10 @@
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Audio\tiny\tinystr.cpp" />
+    <ClCompile Include="..\Audio\tiny\tinyxml.cpp" />
+    <ClCompile Include="..\Audio\tiny\tinyxmlerror.cpp" />
+    <ClCompile Include="..\Audio\tiny\tinyxmlparser.cpp" />
     <ClCompile Include="AllocMeshHierarchy.cpp" />
     <ClCompile Include="AnimatedModel.cpp" />
     <ClCompile Include="Camera.cpp" />
