@@ -51,7 +51,14 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>d3d9.lib;d3dx9.lib;dxerr.lib;dxguid.lib;dinput8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
     </Link>
+    <FxCompile>
+      <ShaderType>Effect</ShaderType>
+    </FxCompile>
+    <FxCompile>
+      <ShaderModel>2.0</ShaderModel>
+    </FxCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -69,6 +76,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Audio\cTextureResource.h" />
+    <ClInclude Include="..\Audio\tiny\tinystr.h" />
+    <ClInclude Include="..\Audio\tiny\tinyxml.h" />
+    <ClInclude Include="..\Render\AllocMeshHierarchy.h" />
+    <ClInclude Include="..\Render\AnimatedModel.h" />
+    <ClInclude Include="..\Render\Camera.h" />
+    <ClInclude Include="..\Render\d3dApp.h" />
+    <ClInclude Include="..\Render\d3dUtil.h" />
+    <ClInclude Include="..\Render\DirectInput.h" />
+    <ClInclude Include="..\Render\EngineMain.h" />
+    <ClInclude Include="..\Render\GfxStats.h" />
+    <ClInclude Include="..\Render\Lighting.h" />
+    <ClInclude Include="..\Render\Model.h" />
+    <ClInclude Include="..\Render\RenderingInterface.h" />
+    <ClInclude Include="..\Render\resource.h" />
+    <ClInclude Include="..\Render\Shaders.h" />
+    <ClInclude Include="..\Render\stdafx.h" />
+    <ClInclude Include="..\Render\Vertex.h" />
     <ClInclude Include="MainInterface.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="stdafx.h" />
@@ -76,11 +100,42 @@
     <ClInclude Include="WorldObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Audio\tiny\tinystr.cpp" />
+    <ClCompile Include="..\Audio\tiny\tinyxml.cpp" />
+    <ClCompile Include="..\Audio\tiny\tinyxmlerror.cpp" />
+    <ClCompile Include="..\Audio\tiny\tinyxmlparser.cpp" />
+    <ClCompile Include="..\Render\AllocMeshHierarchy.cpp" />
+    <ClCompile Include="..\Render\AnimatedModel.cpp" />
+    <ClCompile Include="..\Render\Camera.cpp" />
+    <ClCompile Include="..\Render\d3dApp.cpp" />
+    <ClCompile Include="..\Render\d3dUtil.cpp" />
+    <ClCompile Include="..\Render\DirectInput.cpp" />
+    <ClCompile Include="..\Render\EngineMain.cpp" />
+    <ClCompile Include="..\Render\GfxStats.cpp" />
+    <ClCompile Include="..\Render\Lighting.cpp" />
+    <ClCompile Include="..\Render\Model.cpp" />
+    <ClCompile Include="..\Render\RenderingInterface.cpp" />
+    <ClCompile Include="..\Render\Shaders.cpp" />
+    <ClCompile Include="..\Render\Vertex.cpp" />
     <ClCompile Include="GSP420MainCore.cpp" />
     <ClCompile Include="MainInterface.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="WorldObject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\Render\fx\lighting.fx">
+      <FileType>Document</FileType>
+    </FxCompile>
+    <FxCompile Include="..\Render\fx\pointlight.fx">
+      <FileType>Document</FileType>
+    </FxCompile>
+    <FxCompile Include="..\Render\fx\vblend2.fx">
+      <FileType>Document</FileType>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Render\Render.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

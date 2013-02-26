@@ -13,12 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\tiny">
+      <UniqueIdentifier>{d16358c8-1dfc-4070-a4ee-c1716326dea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tiny">
+      <UniqueIdentifier>{66c6dc38-708c-4f14-a743-a770d941ce53}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AudioManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cTextureResource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
@@ -27,37 +30,40 @@
     <ClCompile Include="Sound.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tiny\tinystr.cpp">
+    <ClCompile Include="cTextureResource.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tiny\tinystr.cpp">
+      <Filter>Source Files\tiny</Filter>
     </ClCompile>
     <ClCompile Include="tiny\tinyxml.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tiny</Filter>
     </ClCompile>
     <ClCompile Include="tiny\tinyxmlerror.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tiny</Filter>
     </ClCompile>
     <ClCompile Include="tiny\tinyxmlparser.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tiny</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cTextureResource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Sound.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tiny\tinystr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tiny\tinyxml.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cTextureResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tiny\tinystr.h">
+      <Filter>Header Files\tiny</Filter>
+    </ClInclude>
+    <ClInclude Include="tiny\tinyxml.h">
+      <Filter>Header Files\tiny</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

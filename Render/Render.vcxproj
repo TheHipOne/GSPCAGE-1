@@ -71,52 +71,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Audio\tiny\tinystr.h" />
-    <ClInclude Include="..\Audio\tiny\tinyxml.h" />
-    <ClInclude Include="AllocMeshHierarchy.h" />
-    <ClInclude Include="AnimatedModel.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="d3dApp.h" />
-    <ClInclude Include="d3dUtil.h" />
-    <ClInclude Include="DirectInput.h" />
-    <ClInclude Include="EngineMain.h" />
-    <ClInclude Include="GfxStats.h" />
-    <ClInclude Include="Lighting.h" />
-    <ClInclude Include="Model.h" />
-    <ClInclude Include="RenderingInterface.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Shaders.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Vertex.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Audio\tiny\tinystr.cpp" />
-    <ClCompile Include="..\Audio\tiny\tinyxml.cpp" />
-    <ClCompile Include="..\Audio\tiny\tinyxmlerror.cpp" />
-    <ClCompile Include="..\Audio\tiny\tinyxmlparser.cpp" />
-    <ClCompile Include="AllocMeshHierarchy.cpp" />
-    <ClCompile Include="AnimatedModel.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="d3dApp.cpp" />
-    <ClCompile Include="d3dUtil.cpp" />
-    <ClCompile Include="DirectInput.cpp" />
-    <ClCompile Include="EngineMain.cpp" />
-    <ClCompile Include="GfxStats.cpp" />
-    <ClCompile Include="Lighting.cpp" />
-    <ClCompile Include="Model.cpp" />
-    <ClCompile Include="RenderingInterface.cpp" />
-    <ClCompile Include="Shaders.cpp" />
-    <ClCompile Include="Vertex.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="fx\lighting.fx" />
-    <FxCompile Include="fx\pointlight.fx" />
-    <FxCompile Include="fx\vblend2.fx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Render.rc" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
