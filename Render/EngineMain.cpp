@@ -12,6 +12,8 @@
 
 #include "EngineMain.h"
 
+cResourceManager* resMan = new cResourceManager();
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 				   PSTR cmdLine, int showCmd)
 {
@@ -39,7 +41,7 @@ EngineMain::EngineMain(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE 
 		PostQuitMessage(0);
 	}
 
-
+	
 	Shaders::InitAll();
 	InitAllVertexDeclarations();
 	
@@ -160,7 +162,7 @@ void EngineMain::drawScene()
 {
 	// Clear the backbuffer and depth buffer.
 	HR(g_d3dDevice->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0xffffffff, 1.0f, 0));
-
+	
 	HR(g_d3dDevice->BeginScene());
 
 	D3DXMATRIX wVPM = camera.GetView()*camera.GetProjection();

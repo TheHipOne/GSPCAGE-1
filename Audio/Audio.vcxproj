@@ -68,10 +68,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AudioManager.cpp" />
-    <ClCompile Include="cTextureResource.cpp" />
-    <ClCompile Include="Sound.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="tiny\tinystr.cpp" />
     <ClCompile Include="tiny\tinyxml.cpp" />
     <ClCompile Include="tiny\tinyxmlerror.cpp" />
@@ -79,9 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioManager.h" />
-    <ClInclude Include="cTextureResource.h" />
     <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="Sound.h" />
     <ClInclude Include="tiny\tinystr.h" />
     <ClInclude Include="tiny\tinyxml.h" />
   </ItemGroup>

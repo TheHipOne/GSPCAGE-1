@@ -34,6 +34,12 @@
     <Filter Include="Resource Files\Render">
       <UniqueIdentifier>{5c258a50-c6c2-4e53-85f8-a695c2e1877f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\ResourceManager">
+      <UniqueIdentifier>{3136e42a-6944-41f1-9d79-a2dd4eaee487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ResourceManager">
+      <UniqueIdentifier>{c5f9753b-f330-4609-8f4d-ac3037c6d8ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Audio\tiny\tinystr.h">
@@ -87,9 +93,6 @@
     <ClInclude Include="..\Render\Vertex.h">
       <Filter>Header Files\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\Audio\cTextureResource.h">
-      <Filter>Header Files\Main</Filter>
-    </ClInclude>
     <ClInclude Include="MainInterface.h">
       <Filter>Header Files\Main</Filter>
     </ClInclude>
@@ -104,6 +107,18 @@
     </ClInclude>
     <ClInclude Include="WorldObject.h">
       <Filter>Header Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Audio\AudioManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Audio\ResourceManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Audio\Sound.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Audio\cTextureResource.h">
+      <Filter>Header Files\ResourceManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +187,18 @@
     </ClCompile>
     <ClCompile Include="..\Render\Vertex.cpp">
       <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Audio\AudioManager.cpp">
+      <Filter>Source Files\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Audio\ResourceManager.cpp">
+      <Filter>Source Files\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Audio\cTextureResource.cpp">
+      <Filter>Source Files\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Audio\Sound.cpp">
+      <Filter>Source Files\ResourceManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

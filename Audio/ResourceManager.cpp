@@ -9,10 +9,10 @@
 #define SAFE_DELETE(a) { delete (a); (a) = NULL; }
 #include "ResourceManager.h"
 #include "AudioManager.h"
-
+#include "../Render/d3dUtil.h"
 
 AudioManager* g_audioManager;
-
+cRenderManager* g_renderManager = new cRenderManager();
 
 
 
@@ -56,7 +56,7 @@ bool cResourceManager::loadFromXMLFile(std::string Filename)
 							//added to resource list.  
 							if(AttribValue=="graphic")
 							{
-								//Resource = g_RenderManager->loadResourceFromXML(Element);  //as in CGraphicResource = etc
+								Resource = g_renderManager->load3DFromXML(Element);
 							}
 
 							if(AttribValue=="texture")
