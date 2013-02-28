@@ -55,18 +55,44 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 
 	InventorySetup(); // INVENTORY_EXAMPLE - build the inventory
 	//HUD SAMPLE
-	float HEALTH = 100;
-	float current = 1.0;
-	SpriteStrip bars(L"bar.png", 1);
-	StatusBar health(L"health", 10, 10, 0, current, HEALTH, bars);
+		//main declarations
+	SpriteStrip barSprites(L"bar.png", 4);
+	SpriteStrip CreditSprites(L"credits.png", 8);
 
-	int i = 0;		//iterator to demonstrate changing icons
-	int li = 0;		//iterator to demonstrate changing icons
-	SpriteStrip icons(L"icons.png", 10);
-	StatusIcon equipped(L"Equipped", 10, 84, i, icons);
+	//healthbar
+	float playerHealth = 100.0;
+	float maxPlayerHealth = playerHealth;
+	int healthBarImageID = 0;
+	StatusBar playerHealthBar(L"Health", 5, 5, healthBarImageID, playerHealth, maxPlayerHealth, barSprites );
+	/*
+	//when health is modified
+	if(playerHealth >= 50.0){
+		healthBarImageID = 0;
+	}else{
+		if(playerHealth >= 25.0){
+			healthBarImageID = 1;
+		}else{
+			healthBarImageID = 2;
+		}
+	}
+	playerHealthBar.changeImage(healthBarImageID);
+	playerHealthBar.modifyValue(playerHealth, barSprites);
+	*/
+	//stamina bar
+	float playerStamina = 100.0;
+	float maxPlayerStamina = playerStamina;
+	StatusBar playerStaminaBar(L"Stamina", 5, 26, 4, playerStamina, maxPlayerStamina, barSprites );
 
-	std::wstring apples = L"Find the rainbow and stab it with kittens";
-	TextBox randomObjective(L"Text 1", int(SCREEN_WIDTH - (SCREEN_WIDTH/2.5* 2)), SCREEN_HEIGHT-int(SCREEN_HEIGHT/4),  D3DCOLOR_RGBA(255, 0, 255, 255), apples);
+	/*
+	//when stamina is modified
+	playerStaminaBar.modifyValue(playerStamina, barSprites);
+	*/
+
+	//credits
+	StatusIcon credits(L"credits", SCREEN_WIDTH/4, SCREEN_HEIGHT/4, crSlide, CreditSprites);
+	bool showCredits = true;
+	int li = 0;
+	int crSlide = 0;
 	//END HUD SAMPLE
 
 	// Main message loop:
