@@ -27,15 +27,18 @@
 	<!---------------------------------------------------------------------------------------->
 	<! -- Texture/image Assets begin with 3 followed by next number for example first texture asset 300 -->
 	
-	<resource UID="300" type="texture" filename="_misc\barca_assets\dummyDie.gif" scenescope = "1"></resource>
-	<resource UID="301" type="texture" filename="_misc\barca_assets\dummyThrow.gif" scenescope = "1"></resource>
-	<resource UID="302" type="texture" filename="_misc\barca_assets\dummyCutOut.jpg" scenescope = "1"></resource>
-	<resource UID="303" type="texture" filename="_misc\barca_assets\dummysprites.png" scenescope = "1"></resource>
-	<resource UID="304" type="texture" filename="_misc\barca_assets\dummysprites2.png" scenescope = "1"></resource>
-	<resource UID="305" type="texture" filename="_misc\barca_assets\GameBackgroundCombined.png" scenescope = "1"></resource>
-	<resource UID="306" type="texture" filename="_misc\barca_assets\GameBackgroundForeground.png" scenescope = "1"></resource>
-	<resource UID="307" type="texture" filename="_misc\barca_assets\GameBackgroundMountains.png" scenescope = "1"></resource>
-	<resource UID="308" type="texture" filename="_misc\barca_assets\GameBackgroundSky.png" scenescope = ""></resource>
-	<resource UID="309" type="texture" filename="_misc\barca_assets\mBackground.png" scenescope = "0"></resource>
+	<resource UID="300" type="texture" filename="_misc\barca_assets\dummyDie.gif" scenescope="1"></resource>
+	<resource UID="301" type="texture" filename="_misc\barca_assets\dummyThrow.gif" scenescope="1"></resource>
+	<resource UID="302" type="texture" filename="_misc\barca_assets\dummyCutOut.jpg" scenescope="1"></resource>
+	<resource UID="303" type="texture" filename="_misc\barca_assets\dummysprites.png" scenescope="1"></resource>
+	<resource UID="304" type="texture" filename="_misc\barca_assets\dummysprites2.png" scenescope="1"></resource>
+	<resource UID="305" type="texture" filename="_misc\barca_assets\GameBackgroundCombined.png" scenescope="1"></resource>
+	<resource UID="306" type="texture" filename="_misc\barca_assets\GameBackgroundForeground.png" scenescope="1"></resource>
+	<resource UID="307" type="texture" filename="_misc\barca_assets\GameBackgroundMountains.png" scenescope="1"></resource>
+	<resource UID="308" type="texture" filename="_misc\barca_assets\GameBackgroundSky.png" scenescope="1"></resource>
+	<resource UID="309" type="texture" filename="_misc\barca_assets\mBackground.png" scenescope="0"></resource>
+	<resource UID="310" type="texture" filename="_misc\barca_assets\bar.png" scenescope="1"></resource>
+	<resource UID="311" type="texture" filename="_misc\barca_assets\credits.png" scenescope="2"></resource>
+	
 	
 </resources>
