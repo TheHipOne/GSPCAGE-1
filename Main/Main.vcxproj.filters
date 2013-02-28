@@ -40,6 +40,27 @@
     <Filter Include="Source Files\ResourceManager">
       <UniqueIdentifier>{c5f9753b-f330-4609-8f4d-ac3037c6d8ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Main\AI">
+      <UniqueIdentifier>{bb28101b-a0a3-4323-ad7d-df6d234c6143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Main\AI\Bounds Detection">
+      <UniqueIdentifier>{1505226f-82e7-4b59-aa46-e59e40b5b620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Main\AI\State, Message, and Entity Systems">
+      <UniqueIdentifier>{0067d67e-1da2-4885-9ca9-1ed181addca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Main\AI\Steering Behaviors">
+      <UniqueIdentifier>{2a2f8da8-8af8-4958-ac3c-b66ef92fda12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Main\AI\Weighted Movement">
+      <UniqueIdentifier>{c4887a42-6ec2-43b1-b3a7-5d8a119902b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Main\AI\Steering Behaviors\misc">
+      <UniqueIdentifier>{c3908c91-cb6e-4f04-af7b-9a918b15356d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Main\AI\Steering Behaviors\2D">
+      <UniqueIdentifier>{a7bdef0b-f4f8-4478-8e48-22e5526ab012}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Audio\tiny\tinystr.h">
@@ -120,6 +141,99 @@
     <ClInclude Include="..\Audio\cTextureResource.h">
       <Filter>Header Files\ResourceManager</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Box2D.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Constants.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\FunctionTemplates.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Geometry.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Projectile.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Trigger.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Trigger_LimitedLifetime.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Trigger_Respawning.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\TriggerRegion.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Vector2D.h">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\Entity.h">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\EntityGenerator.h">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\EntityManager.h">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\MessageSystem.h">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\State.h">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\StateMachine.h">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\Timer.h">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\ParamLoader.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\Path.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\SteeringBehaviors.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\2D\C2DMatrix.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\2D\geometry.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\2D\InvertedAABBox2D.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\2D\Transformations.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\2D\Vector2D.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\2D\Wall2D.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\misc\CellSpacePartition.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\misc\Cgdi.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\misc\iniFileLoaderBase.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\misc\Stream_Utility_Functions.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\misc\utils.h">
+      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GSP420MainCore.cpp">
@@ -199,6 +313,51 @@
     </ClCompile>
     <ClCompile Include="..\Audio\Sound.cpp">
       <Filter>Source Files\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Bounds Detection\Projectile.cpp">
+      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\Entity.cpp">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\EntityGenerator.cpp">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\EntityManager.cpp">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\Main.cpp">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\MessageSystem.cpp">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\State.cpp">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\State, Message, and Entity Systems\Timer.cpp">
+      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Weighted Movement\WM_Main.cpp">
+      <Filter>Header Files\Main\AI\Weighted Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\ParamLoader.cpp">
+      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\Path.cpp">
+      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\SteeringBehaviors.cpp">
+      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\2D\Vector2d.cpp">
+      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\misc\Cgdi.cpp">
+      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2010\Projects\AICore_Files\Steering Behaviors\misc\iniFileLoaderBase.cpp">
+      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
