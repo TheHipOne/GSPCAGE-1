@@ -144,93 +144,6 @@
     <ClInclude Include="..\Audio\cTextureResource.h">
       <Filter>Header Files\ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\Box2D.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\FunctionTemplates.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\Geometry.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\Projectile.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\Trigger.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\Trigger_LimitedLifetime.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\Trigger_Respawning.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\TriggerRegion.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Bounds Detection\Vector2D.h">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\State, Message, and Entity Systems\Entity.h">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\State, Message, and Entity Systems\EntityGenerator.h">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\State, Message, and Entity Systems\EntityManager.h">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\State, Message, and Entity Systems\MessageSystem.h">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\State, Message, and Entity Systems\State.h">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\State, Message, and Entity Systems\StateMachine.h">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\State, Message, and Entity Systems\Timer.h">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\2D\C2DMatrix.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\2D\geometry.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\2D\InvertedAABBox2D.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\2D\Transformations.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\2D\Vector2D.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\2D\Wall2D.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\misc\CellSpacePartition.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\misc\Cgdi.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\misc\iniFileLoaderBase.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\misc\Stream_Utility_Functions.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\misc\utils.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\ParamLoader.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
-    </ClInclude>
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\Path.h">
-      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GSP420MainCore.cpp">
@@ -310,45 +223,6 @@
     </ClCompile>
     <ClCompile Include="..\Audio\Sound.cpp">
       <Filter>Source Files\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\Bounds Detection\Projectile.cpp">
-      <Filter>Header Files\Main\AI\Bounds Detection</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\Steering Behaviors\2D\Vector2d.cpp">
-      <Filter>Header Files\Main\AI\Steering Behaviors\2D</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\Steering Behaviors\misc\Cgdi.cpp">
-      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\Steering Behaviors\misc\iniFileLoaderBase.cpp">
-      <Filter>Header Files\Main\AI\Steering Behaviors\misc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\Steering Behaviors\ParamLoader.cpp">
-      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\Steering Behaviors\Path.cpp">
-      <Filter>Header Files\Main\AI\Steering Behaviors</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\State, Message, and Entity Systems\Entity.cpp">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\State, Message, and Entity Systems\EntityGenerator.cpp">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\State, Message, and Entity Systems\EntityManager.cpp">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\State, Message, and Entity Systems\MessageSystem.cpp">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\State, Message, and Entity Systems\State.cpp">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\State, Message, and Entity Systems\Timer.cpp">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\AICore_Files\State, Message, and Entity Systems\Main.cpp">
-      <Filter>Header Files\Main\AI\State, Message, and Entity Systems\Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
