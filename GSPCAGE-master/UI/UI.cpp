@@ -117,21 +117,24 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 
 				inventory.drawElement(); // INVENTORY_EXAMPLE
 				//HUD SAMPLE
-				health.modifyValue(current+= 0.25, bars);
-				health.drawElement(bars);
+				playerHealthBar.drawElement(barSprites);
+				playerStatusBar.drawElement(barSprites);
+				if(showCredits == true){
+					credits.drawElement(CreditSprites);
+					li++;
+					if (li > 150){
+						crSlide++;
+						credits.changeImage(crSlide, CreditSprites);
 
-				randomObjective.drawElement();
-
-				equipped.changeImage(i, icons);
-				equipped.drawElement(icons);
-				li++;
-				if (li>30){
-					i++;
-					li = 0;
-				}
-				if(i > 9){
-					li = 0;
-					i = 0;
+						li = 0;
+					}
+					if(crSlide > 7){
+						li = 0;
+						crSlide = 0;
+						showCredits = false;
+					}else{
+						showCredits = true;
+					}
 				}
 				//END HUD SAMPLE
 
