@@ -15,6 +15,8 @@
 #include "2d/geometry.h"
 #include "misc/CellSpacePartition.h"
 #include "misc/Stream_Utility_Functions.h"
+#include "../State, Message, and Entity Systems/Entity.h"
+#include "../State, Message, and Entity Systems/EntityManager.h"
 
 #include <cassert>
 

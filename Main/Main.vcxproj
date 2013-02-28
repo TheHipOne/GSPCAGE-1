@@ -78,7 +78,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\AICore_Files\Bounds Detection\Box2D.h" />
-    <ClInclude Include="..\AICore_Files\Bounds Detection\Constants.h" />
     <ClInclude Include="..\AICore_Files\Bounds Detection\FunctionTemplates.h" />
     <ClInclude Include="..\AICore_Files\Bounds Detection\Geometry.h" />
     <ClInclude Include="..\AICore_Files\Bounds Detection\Projectile.h" />
@@ -107,7 +106,6 @@
     <ClInclude Include="..\AICore_Files\Steering Behaviors\misc\utils.h" />
     <ClInclude Include="..\AICore_Files\Steering Behaviors\ParamLoader.h" />
     <ClInclude Include="..\AICore_Files\Steering Behaviors\Path.h" />
-    <ClInclude Include="..\AICore_Files\Steering Behaviors\SteeringBehaviors.h" />
     <ClInclude Include="..\Audio\AudioManager.h" />
     <ClInclude Include="..\Audio\cTextureResource.h" />
     <ClInclude Include="..\Audio\ResourceManager.h" />
@@ -149,8 +147,6 @@
     <ClCompile Include="..\AICore_Files\Steering Behaviors\misc\iniFileLoaderBase.cpp" />
     <ClCompile Include="..\AICore_Files\Steering Behaviors\ParamLoader.cpp" />
     <ClCompile Include="..\AICore_Files\Steering Behaviors\Path.cpp" />
-    <ClCompile Include="..\AICore_Files\Steering Behaviors\SteeringBehaviors.cpp" />
-    <ClCompile Include="..\AICore_Files\Weighted Movement\WM_Main.cpp" />
     <ClCompile Include="..\Audio\AudioManager.cpp" />
     <ClCompile Include="..\Audio\cTextureResource.cpp" />
     <ClCompile Include="..\Audio\ResourceManager.cpp" />

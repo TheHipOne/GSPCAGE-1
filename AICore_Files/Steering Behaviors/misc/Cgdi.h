@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef CGDI_H
 #define CGDI_H
 /************************************************************************
@@ -208,7 +210,7 @@ public:
 
   //---------------------------Text
 
-  void TextAtPos(int x, int y, const std::string &s)
+  void TextAtPos(int x, int y, (type_cast<const std::string*) &s)
   {
     TextOut(m_hdc, x, y, s.c_str(), (int)s.size());
   }
