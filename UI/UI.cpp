@@ -56,8 +56,8 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	InventorySetup(); // INVENTORY_EXAMPLE - build the inventory
 	//HUD SAMPLE
 	//main declarations
-	SpriteStrip barSprites(L"bar.png", 4);
-	SpriteStrip CreditSprites(L"credits.png", 8);
+	SpriteStrip barSprites(L"_\misc\barca_assets\bar.png", 4);
+	SpriteStrip barSprites(L"_\misc\barca_assets\credits.png", 8);
 
 	//healthbar
 	float playerHealth = 100.0;
@@ -89,11 +89,11 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	*/
 	
 	//credits
-	StatusIcon credits(L"credits", SCREEN_WIDTH/4, SCREEN_HEIGHT/4, crSlide, CreditSprites);
+
 	bool showCredits = true;
 	int li = 0;
 	int crSlide = 0;
-	
+	StatusIcon credits(L"credits", SCREEN_WIDTH/4, SCREEN_HEIGHT/4, crSlide, CreditSprites);
 	//END HUD SAMPLE
 
 	// Main message loop:
@@ -119,7 +119,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 				inventory.drawElement(); // INVENTORY_EXAMPLE
 				//HUD SAMPLE
 				playerHealthBar.drawElement(barSprites);
-				playerStatusBar.drawElement(barSprites);
+				playerStaminaBar.drawElement(barSprites);
 				if(showCredits == true){
 					credits.drawElement(CreditSprites);
 					li++;
