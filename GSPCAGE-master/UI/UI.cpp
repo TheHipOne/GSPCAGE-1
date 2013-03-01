@@ -89,10 +89,11 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	*/
 
 	//credits
-	StatusIcon credits(L"credits", SCREEN_WIDTH/4, SCREEN_HEIGHT/4, crSlide, CreditSprites);
+	
 	bool showCredits = true;
 	int li = 0;
 	int crSlide = 0;
+	StatusIcon credits(L"credits", SCREEN_WIDTH/4, SCREEN_HEIGHT/4, crSlide, CreditSprites);
 	//END HUD SAMPLE
 
 	// Main message loop:
@@ -118,7 +119,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 				inventory.drawElement(); // INVENTORY_EXAMPLE
 				//HUD SAMPLE
 				playerHealthBar.drawElement(barSprites);
-				playerStatusBar.drawElement(barSprites);
+				playerStaminaBar.drawElement(barSprites);
 				if(showCredits == true){
 					credits.drawElement(CreditSprites);
 					li++;
